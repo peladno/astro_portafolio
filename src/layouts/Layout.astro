@@ -1,0 +1,77 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="light">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet"/>
+		<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+		<style>
+			@import "../index.css";
+		</style>
+	</head>
+	<body class="bg-[#f8f6f6] text-[#2d2a2a]  selection:bg-[#bf3a2b]/30 font-sans selection:text-white">
+		<!-- Vertical Guide Line -->
+		<div class="fixed left-8 md:left-16 top-0 bottom-0 w-px bg-[#bf3a2b]/20 hidden md:block z-0">
+			<div class="absolute top-0 left-0 w-full h-1/4 bg-[#bf3a2b]"></div>
+		</div>
+		
+		<slot />
+
+		<style is:global>
+			html {
+				scroll-behavior: smooth;
+			}
+			
+			.serif-thin {
+				font-family: 'Playfair Display', serif;
+				font-weight: 400;
+			}
+			.vertical-text {
+				writing-mode: vertical-rl;
+				text-orientation: mixed;
+			}
+			.hanko {
+				border: 2px solid #bf3a2b;
+				color: #bf3a2b;
+				padding: 2px 4px;
+				font-weight: 700;
+				display: inline-block;
+			}
+			.hanko-large {
+				width: 48px;
+				height: 48px;
+				border: 2px solid #bf3a2b;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-weight: 700;
+				color: #bf3a2b;
+				position: relative;
+				background: rgba(191, 58, 43, 0.05);
+			}
+			.hanko-large::after {
+				content: '';
+				position: absolute;
+				inset: 2px;
+				border: 1px solid #bf3a2b;
+				opacity: 0.3;
+			}
+			.timeline-line {
+				width: 1px;
+				background: linear-gradient(to bottom, transparent, #bf3a2b 10%, #bf3a2b 90%, transparent);
+				opacity: 0.2;
+			}
+		</style>
+	</body>
+</html>
