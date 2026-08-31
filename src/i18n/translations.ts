@@ -266,8 +266,8 @@ export const translations = {
         ],
       },
       {
-        periodEn: '03/2023 — 08/2023',
-        periodJa: '2023年3月 — 2023年8月',
+        periodEn: '03/2023 — 03/2024',
+        periodJa: '2023年3月 — 2024年3月',
         titleEn: 'Mobile Developer',
         titleJa: 'モバイルアプリ開発者',
         organizationEn: 'Cross-Platform Mobile Engineering',
