@@ -1,28 +1,50 @@
 ---
-const skillGroups = [
+interface Skill {
+  icon: string;
+  name: string;
+}
+
+interface SkillGroup {
+  title: string;
+  wide?: boolean;
+  skills: Skill[];
+}
+
+const skillGroups: SkillGroup[] = [
   {
-    title: 'Languages',
+    title: 'Systems & Core Languages',
     skills: [
-      { icon: 'code', name: 'TypeScript' },
-      { icon: 'bolt', name: 'C' },
-      { icon: 'terminal', name: 'Python' },
+      { icon: 'terminal', name: 'C (Systems & Algorithms)' },
+      { icon: 'code', name: 'Python' },
+      { icon: 'code', name: 'JavaScript (ES6+)' },
+      { icon: 'integration_instructions', name: 'Java & Kotlin' },
     ],
   },
   {
-    title: 'Frameworks',
+    title: 'Frontend & Mobile',
     skills: [
-      { icon: 'layers', name: 'React / Next.js' },
-      { icon: 'palette', name: 'Tailwind CSS' },
-      { icon: 'api', name: 'Node.js / Express' },
+      { icon: 'layers', name: 'React & React Native' },
+      { icon: 'smartphone', name: 'Expo' },
+      { icon: 'palette', name: 'CSS3 / Sass / Bootstrap' },
+      { icon: 'tune', name: 'Redux State Management' },
     ],
   },
   {
-    title: 'Ecosystem',
-    wide: true,
+    title: 'Backend & Data',
     skills: [
-      { icon: 'cloud_queue', name: 'AWS Infrastructure' },
-      { icon: 'inventory_2', name: 'Docker & K8s' },
-      { icon: 'account_tree', name: 'Git Architecture' },
+      { icon: 'api', name: 'Node.js & Express' },
+      { icon: 'database', name: 'MongoDB' },
+      { icon: 'storage', name: 'MySQL & SQLite' },
+      { icon: 'local_fire_department', name: 'Firebase' },
+    ],
+  },
+  {
+    title: 'Tools & Workflow',
+    skills: [
+      { icon: 'account_tree', name: 'Git & GitHub' },
+      { icon: 'inventory_2', name: 'Docker' },
+      { icon: 'view_kanban', name: 'Agile (Scrum / Jira)' },
+      { icon: 'view_quilt', name: 'Material UI' },
     ],
   },
 ];
@@ -51,9 +73,7 @@ const skillGroups = [
               <ul
                 class:list={[
                   'text-sm font-light',
-                  group.wide
-                    ? 'flex flex-wrap gap-x-12 gap-y-4'
-                    : 'space-y-4',
+                  group.wide ? 'flex flex-wrap gap-x-12 gap-y-4' : 'space-y-4',
                 ]}
               >
                 {group.skills.map((skill) => (

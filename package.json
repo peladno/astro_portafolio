@@ -12,11 +12,10 @@
     "lint": "tsc --noEmit"
   },
   "dependencies": {
-    "@astrojs/react": "^5.0.5",
-    "@astrojs/tailwind": "^6.0.2",
+    "@astrojs/react": "^6.0.4",
     "@tailwindcss/vite": "^4.1.14",
     "@vitejs/plugin-react": "^5.0.4",
-    "astro": "^5.0.0",
+    "astro": "^7.2.9",
     "lucide-react": "^0.546.0",
     "motion": "^12.23.24",
     "react": "^19.0.1",
