@@ -63,21 +63,27 @@ const { title } = Astro.props;
         text-orientation: mixed;
       }
       .hanko {
-        border: 2px solid #bf3a2b;
+        border: 1.5px solid #bf3a2b;
         color: #bf3a2b;
-        padding: 2px 4px;
-        font-weight: 700;
-        display: inline-block;
+        padding: 5px 12px;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        letter-spacing: 0.18em;
+        line-height: 1;
+        background: rgba(191, 58, 43, 0.04);
       }
       .hanko-large {
-        width: 40px;
-        height: 40px;
+        min-width: 52px;
+        padding: 8px 16px;
         border: 2px solid #bf3a2b;
-        display: flex;
+        display: inline-flex;
         align-items: center;
         justify-content: center;
         font-weight: 700;
         color: #bf3a2b;
+        letter-spacing: 0.25em;
         position: relative;
         background: rgba(191, 58, 43, 0.05);
       }

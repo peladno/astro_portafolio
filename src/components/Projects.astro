@@ -1,3 +1,61 @@
+---
+interface Project {
+  id: number;
+  caseNumber: string;
+  name: string;
+  description: string;
+  skills: string[];
+  img: string;
+  web?: string;
+  github?: string;
+}
+
+const projects: Project[] = [
+  {
+    id: 1,
+    caseNumber: '01',
+    name: 'Inventory Mobile App',
+    description:
+      'Cross-platform mobile application managing local inventory data with SQLite and Firebase authentication, built with Expo and Redux.',
+    skills: ['React Native', 'Redux', 'Expo', 'SQLite', 'Firebase'],
+    img: '/images/projects/inventoryapp.png',
+    github: 'https://github.com/peladno/inventory-reactNativeApp',
+  },
+  {
+    id: 2,
+    caseNumber: '02',
+    name: 'E-Commerce (E-Shop)',
+    description:
+      'Full-stack e-commerce web application with product catalog, cart workflows, and REST API backend built with Express and MongoDB.',
+    skills: ['React', 'Node.js', 'MongoDB', 'Material UI', 'Express'],
+    img: '/images/projects/Eshop.png',
+    web: 'https://eshop-project-29f5e.web.app/',
+    github: 'https://github.com/peladno/eshop-project',
+  },
+  {
+    id: 3,
+    caseNumber: '03',
+    name: 'Recipe Generator',
+    description:
+      'Dynamic recipe generator and culinary catalog application built with Vanilla JavaScript, Sass, and Bootstrap.',
+    skills: ['JavaScript', 'HTML5', 'Sass', 'Bootstrap'],
+    img: '/images/projects/recipes.png',
+    web: 'https://peladno.github.io/JS28160JavierPerez/',
+    github: 'https://github.com/peladno/JS28160JavierPerez',
+  },
+  {
+    id: 4,
+    caseNumber: '04',
+    name: 'DevSafio Platform',
+    description:
+      'Web platform connecting junior developers with job opportunities, focusing on frontend architecture and agile Scrum delivery.',
+    skills: ['React', 'Docker', 'Scrum / Jira', 'Git'],
+    img: '/images/projects/devsafio.png',
+    github: 'https://github.com/dlab-team/c6-frontend',
+  },
+];
+---
+
 <section
   class='max-w-4xl mx-auto py-24 border-t border-[#8c8484]/10'
   id='projects'
@@ -12,98 +70,74 @@
     </div>
     <div class='md:col-span-8'>
       <span class='text-[10px] tracking-widest uppercase text-[#8c8484]'
-        >Portfolio Gallery</span
+        >Featured Projects ({projects.length})</span
       >
     </div>
   </div>
+
   <div class='grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24'>
-    <!-- Project Card 1 -->
-    <div class='group'>
-      <div class='relative overflow-hidden mb-8 aspect-video bg-neutral-200'>
-        <img
-          alt='Aether Finance'
-          class='w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000'
-          src='https://lh3.googleusercontent.com/aida-public/AB6AXuAuG7C5RHZxH3q59MpnrSFjhYJtT15qihOU8g-KpA2-2NRG7kXBct2DFH03laH5_JCWSZrxeBfzJ5aZir0BJIt5AWcZ3fT6HTrtoaXsIaXJQRS8B8mYwcHeQmMBV1bc9SG1V1xF9guV_YVrAcug8FEWBydgRFHhAKGu2wnetUxHnt2fHrMqS1jPNQAFN1o5C-jxw2GEz4cXb-ktO_Fm4ZjWgUae3w22p0EsrJipR6-WA5CysQX5_QE2dnVNG-DQtQ9y2jgIB0UsA6I'
-        />
-        <div
-          class='absolute inset-0 border border-[#bf3a2b]/0 group-hover:border-[#bf3a2b]/20 transition-all pointer-events-none'
-        >
+    {
+      projects.map((project) => (
+        <div class='group flex flex-col justify-between'>
+          <div>
+            <div class='relative overflow-hidden mb-8 aspect-video bg-neutral-200 border border-[#8c8484]/20 rounded-sm shadow-sm'>
+              <img
+                alt={project.name}
+                class='w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-700'
+                src={project.img}
+                loading='lazy'
+              />
+              <div class='absolute inset-0 border border-[#bf3a2b]/0 group-hover:border-[#bf3a2b]/20 transition-all pointer-events-none' />
+              <div class='absolute top-4 right-4 text-[9px] uppercase tracking-widest bg-white/90 px-3 py-1 text-[#bf3a2b] font-bold shadow-sm'>
+                Case Study {project.caseNumber}
+              </div>
+            </div>
+
+            <div class='space-y-4'>
+              <div class='flex flex-wrap gap-2'>
+                {project.skills.map((skill) => (
+                  <span class='text-[9px] uppercase tracking-widest border border-[#8c8484]/30 px-2 py-0.5 text-[#8c8484]'>
+                    {skill}
+                  </span>
+                ))}
+              </div>
+              <h4 class='text-2xl serif-thin'>{project.name}</h4>
+              <p class='text-sm font-light leading-relaxed text-[#8c8484]'>
+                {project.description}
+              </p>
+            </div>
+          </div>
+
+          <div class='flex items-center gap-6 pt-6 mt-4 border-t border-[#8c8484]/10'>
+            {project.web && (
+              <a
+                class='inline-flex items-center text-[10px] uppercase tracking-[0.2em] font-bold text-[#bf3a2b] hover:translate-x-1 transition-transform'
+                href={project.web}
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                Live Demo
+                <span class='material-symbols-outlined ml-1.5 text-sm'>
+                  open_in_new
+                </span>
+              </a>
+            )}
+            {project.github && (
+              <a
+                class='inline-flex items-center text-[10px] uppercase tracking-[0.2em] font-bold text-[#8c8484] hover:text-[#2d2a2a] hover:translate-x-1 transition-transform'
+                href={project.github}
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                Source Code
+                <span class='material-symbols-outlined ml-1.5 text-sm'>
+                  code
+                </span>
+              </a>
+            )}
+          </div>
         </div>
-        <div
-          class='absolute top-4 right-4 text-[9px] uppercase tracking-widest bg-white/90 px-3 py-1 text-[#bf3a2b] font-bold'
-        >
-          Case Study 01
-        </div>
-      </div>
-      <div class='space-y-4'>
-        <div class='flex gap-3'>
-          <span
-            class='text-[9px] uppercase tracking-widest border border-[#8c8484]/30 px-2 py-0.5 text-[#8c8484]'
-            >Next.js</span
-          >
-          <span
-            class='text-[9px] uppercase tracking-widest border border-[#8c8484]/30 px-2 py-0.5 text-[#8c8484]'
-            >PostgreSQL</span
-          >
-        </div>
-        <h4 class='text-2xl serif-thin'>Aether Finance</h4>
-        <p class='text-sm font-light leading-relaxed text-[#8c8484] max-w-sm'>
-          A decentralized dashboard for institutional asset management,
-          prioritizing clarity and real-time synchronization.
-        </p>
-        <a
-          class='inline-flex items-center text-[10px] uppercase tracking-[0.2em] font-bold text-[#bf3a2b] group-hover:translate-x-1 transition-transform'
-          href='#'
-        >
-          View Case <span class='material-symbols-outlined ml-2 text-sm'
-            >arrow_forward</span
-          >
-        </a>
-      </div>
-    </div>
-    <!-- Project Card 2 -->
-    <div class='group'>
-      <div class='relative overflow-hidden mb-8 aspect-video bg-neutral-200'>
-        <img
-          alt='Komorebi Sync'
-          class='w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000'
-          src='https://lh3.googleusercontent.com/aida-public/AB6AXuBHeQrt9PDXMqqBn1M0wzGRtRQUv1yUou9p1n4mCm-Wwn02CfA1m-yow25C68TsPz7lukJYKLDHKgcp-K8iYLwvFdJfVEQL4ty9A4UxytrBWCh30vlRdD4GbfCkjouEOSVvGNFlasUowCEYpCS7s3ae86uuclgc6TBtYZxn_pvezqK_MXwgOFGoH61ABjGQ1zwfut5qip96WGzr2NmuW4a1WCcOMu1Fh38Kr1iL4-Wcmm_BtcN6NiFgRKxreloj0S6FPtyM3YsTe5k'
-        />
-        <div
-          class='absolute inset-0 border border-[#bf3a2b]/0 group-hover:border-[#bf3a2b]/20 transition-all pointer-events-none'
-        >
-        </div>
-        <div
-          class='absolute top-4 right-4 text-[9px] uppercase tracking-widest bg-white/90 px-3 py-1 text-[#bf3a2b] font-bold'
-        >
-          Case Study 02
-        </div>
-      </div>
-      <div class='space-y-4'>
-        <div class='flex gap-3'>
-          <span
-            class='text-[9px] uppercase tracking-widest border border-[#8c8484]/30 px-2 py-0.5 text-[#8c8484]'
-            >Rust</span
-          >
-          <span
-            class='text-[9px] uppercase tracking-widest border border-[#8c8484]/30 px-2 py-0.5 text-[#8c8484]'
-            >WebRTC</span
-          >
-        </div>
-        <h4 class='text-2xl serif-thin'>Komorebi Sync</h4>
-        <p class='text-sm font-light leading-relaxed text-[#8c8484] max-w-sm'>
-          High-fidelity real-time collaboration engine for distributed
-          engineering teams using binary protocols.
-        </p>
-        <a
-          class='inline-flex items-center text-[10px] uppercase tracking-[0.2em] font-bold text-[#bf3a2b] group-hover:translate-x-1 transition-transform'
-          href='#'
-        >
-          View Source <span class='material-symbols-outlined ml-2 text-sm'
-            >arrow_forward</span
-          >
-        </a>
-      </div>
-    </div>
+      ))
+    }
   </div>
 </section>
