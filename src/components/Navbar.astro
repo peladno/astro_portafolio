@@ -1,47 +1,87 @@
+---
+import { translations } from '../i18n/translations';
+const { nav } = translations;
+---
+
 <nav
-  class='fixed top-0 right-0 p-6 md:p-6 z-50 bg-[#f8f6f6]/80 rounded-md backdrop-blur-sm md:bg-transparent'
+  class='fixed top-0 right-0 p-6 md:p-6 z-50 bg-[#f8f6f6]/90 rounded-md backdrop-blur-md md:bg-transparent flex items-center justify-end gap-6'
 >
   <ul
-    class='flex flex-wrap justify-end gap-x-8 gap-y-4 text-[10px] tracking-[0.2em] uppercase font-medium text-[#8c8484]'
+    class='flex flex-wrap items-center justify-end gap-x-6 md:gap-x-8 gap-y-3 text-[10px] tracking-[0.2em] uppercase font-medium text-[#8c8484]'
   >
     <li>
       <a
         class='hover:text-[#bf3a2b] visited:text-[#8c8484] no-underline transition-colors'
-        href='#home'>Home</a
+        href='#home'
       >
-    </li>
-    <li>
-      <a
-        no-underline
-        class='hover:text-[#bf3a2b] visited:text-[#8c8484] no-underline transition-colors'
-        href='#about'>About</a
-      >
+        <span class='lang-en'>{nav.home.en}</span>
+        <span class='lang-ja'>{nav.home.ja}</span>
+      </a>
     </li>
     <li>
       <a
         class='hover:text-[#bf3a2b] visited:text-[#8c8484] no-underline transition-colors'
-        href='#skills'>Skills</a
+        href='#about'
       >
+        <span class='lang-en'>{nav.about.en}</span>
+        <span class='lang-ja'>{nav.about.ja}</span>
+      </a>
     </li>
     <li>
       <a
         class='hover:text-[#bf3a2b] visited:text-[#8c8484] no-underline transition-colors'
-        href='#projects'>Projects</a
+        href='#skills'
       >
+        <span class='lang-en'>{nav.skills.en}</span>
+        <span class='lang-ja'>{nav.skills.ja}</span>
+      </a>
     </li>
     <li>
       <a
         class='hover:text-[#bf3a2b] visited:text-[#8c8484] no-underline transition-colors'
-        href='#experience'>Path</a
+        href='#projects'
       >
+        <span class='lang-en'>{nav.projects.en}</span>
+        <span class='lang-ja'>{nav.projects.ja}</span>
+      </a>
     </li>
     <li>
       <a
         class='hover:text-[#bf3a2b] visited:text-[#8c8484] no-underline transition-colors'
-        href='#contact'>Contact</a
+        href='#experience'
       >
+        <span class='lang-en'>{nav.experience.en}</span>
+        <span class='lang-ja'>{nav.experience.ja}</span>
+      </a>
+    </li>
+    <li>
+      <a
+        class='hover:text-[#bf3a2b] visited:text-[#8c8484] no-underline transition-colors'
+        href='#contact'
+      >
+        <span class='lang-en'>{nav.contact.en}</span>
+        <span class='lang-ja'>{nav.contact.ja}</span>
+      </a>
     </li>
   </ul>
+
+  <!-- Language Switcher Button -->
+  <button
+    id='lang-toggle'
+    type='button'
+    aria-label='Toggle language / 言語切替'
+    class='flex items-center gap-1.5 px-3 py-1 text-[10px] tracking-widest uppercase border border-[#bf3a2b]/30 hover:border-[#bf3a2b] bg-white/80 hover:bg-white text-[#2d2a2a] rounded-sm transition-all duration-300 shadow-xs cursor-pointer select-none'
+  >
+    <span id='lang-btn-en' class='font-bold text-[#bf3a2b] transition-colors'
+      >EN</span
+    >
+    <span class='text-[#8c8484]/40'>|</span>
+    <span
+      id='lang-btn-ja'
+      class='text-[#8c8484] hover:text-[#bf3a2b] transition-colors font-medium'
+      >日本語</span
+    >
+  </button>
 </nav>
 
 <div
@@ -50,7 +90,48 @@
   <div
     class='vertical-text text-[10px] tracking-widest text-[#8c8484] uppercase'
   >
-    JAVIER PÉREZ — DEVELOPER
+    <span class='lang-en'>{nav.verticalText.en}</span>
+    <span class='lang-ja'>{nav.verticalText.ja}</span>
   </div>
   <div class='w-px h-12 bg-[#8c8484]/30'></div>
 </div>
+
+<script is:inline>
+  function updateLanguageButtonUI(currentLang) {
+    const btnEn = document.getElementById('lang-btn-en');
+    const btnJa = document.getElementById('lang-btn-ja');
+    if (!btnEn || !btnJa) return;
+
+    if (currentLang === 'ja') {
+      btnEn.className =
+        'text-[#8c8484] hover:text-[#bf3a2b] transition-colors font-medium';
+      btnJa.className = 'font-bold text-[#bf3a2b] transition-colors';
+    } else {
+      btnEn.className = 'font-bold text-[#bf3a2b] transition-colors';
+      btnJa.className =
+        'text-[#8c8484] hover:text-[#bf3a2b] transition-colors font-medium';
+    }
+  }
+
+  function initLanguage() {
+    const currentLang = document.documentElement.lang || 'en';
+    updateLanguageButtonUI(currentLang);
+
+    const toggleBtn = document.getElementById('lang-toggle');
+    if (toggleBtn) {
+      toggleBtn.addEventListener('click', () => {
+        const activeLang = document.documentElement.lang === 'ja' ? 'en' : 'ja';
+        document.documentElement.lang = activeLang;
+        localStorage.setItem('portfolio_lang', activeLang);
+        updateLanguageButtonUI(activeLang);
+      });
+    }
+  }
+
+  // Initialize on page load and astro transitions
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLanguage);
+  } else {
+    initLanguage();
+  }
+</script>

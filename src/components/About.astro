@@ -1,3 +1,8 @@
+---
+import { translations } from '../i18n/translations';
+const { about } = translations;
+---
+
 <section
   class='max-w-4xl mx-auto py-24 border-t border-[#8c8484]/10'
   id='about'
@@ -7,69 +12,90 @@
       <h2
         class='text-xs tracking-[0.4em] uppercase text-[#bf3a2b] font-bold mb-8 flex items-center'
       >
-        <span class='mr-4'>01</span> About
+        <span class='mr-4'>{about.sectionNum}</span>
+        <span class='lang-en'>{about.sectionTitle.en}</span>
+        <span class='lang-ja'>{about.sectionTitle.ja}</span>
       </h2>
     </div>
     <div class='md:col-span-8 space-y-12'>
       <p class='text-xl md:text-2xl font-light leading-relaxed text-[#2d2a2a]'>
-        Pastry chef by profession who transitioned with devotion into software
-        engineering. Currently a student at <span
-          class='font-medium text-[#2d2a2a]'>42 Tokyo</span
-        >, sharpening low-level fundamentals in <span
-          class='text-[#bf3a2b] italic'>C</span
-        > and
-        <span class='text-[#bf3a2b] italic'> Python</span> alongside modern full-stack
-        development with
-        <span class='font-medium'>React</span>, <span class='font-medium'
-          >React Native</span
-        >, and backend architectures.
+        <!-- English Intro -->
+        <span class='lang-en'>
+          {about.intro.en.before}<span class='font-medium text-[#2d2a2a]'
+            >{about.intro.en.school}</span
+          >{about.intro.en.mid}<span class='text-[#bf3a2b] italic'
+            >{about.intro.en.cLang}</span
+          >{about.intro.en.and}<span class='text-[#bf3a2b] italic'
+            >{about.intro.en.pythonLang}</span
+          >{about.intro.en.after}<span class='font-medium'
+            >{about.intro.en.react}</span
+          >, <span class='font-medium'>{about.intro.en.reactNative}</span>{
+            about.intro.en.backend
+          }
+        </span>
+        <!-- Japanese Intro -->
+        <span class='lang-ja'>
+          {about.intro.ja.before}<span class='font-medium text-[#2d2a2a]'
+            >{about.intro.ja.school}</span
+          >{about.intro.ja.mid}<span class='text-[#bf3a2b] italic'
+            >{about.intro.ja.cLang}</span
+          >{about.intro.ja.and}<span class='text-[#bf3a2b] italic'
+            >{about.intro.ja.pythonLang}</span
+          >{about.intro.ja.after}<span class='font-medium'
+            >{about.intro.ja.react}</span
+          >、<span class='font-medium'>{about.intro.ja.reactNative}</span>{
+            about.intro.ja.backend
+          }
+        </span>
       </p>
+
       <div class='grid grid-cols-1 md:grid-cols-2 gap-12 pt-8'>
         <div>
           <h3
             class='text-[10px] tracking-[0.2em] uppercase font-bold text-[#8c8484] mb-4'
           >
-            42 Tokyo & Systems
+            <span class='lang-en'>{about.cards.systems.title.en}</span>
+            <span class='lang-ja'>{about.cards.systems.title.ja}</span>
           </h3>
           <p class='text-sm text-[#8c8484] leading-loose font-light'>
-            At 42 Tokyo, I build a rigorous systems foundation through
-            peer-to-peer, project-based engineering. Diving deep into memory
-            management, UNIX architectures, algorithms in C, and scripting in
-            Python.
+            <span class='lang-en'>{about.cards.systems.desc.en}</span>
+            <span class='lang-ja'>{about.cards.systems.desc.ja}</span>
           </p>
         </div>
         <div>
           <h3
             class='text-[10px] tracking-[0.2em] uppercase font-bold text-[#8c8484] mb-4'
           >
-            Culinary Precision & Craft
+            <span class='lang-en'>{about.cards.craft.title.en}</span>
+            <span class='lang-ja'>{about.cards.craft.title.ja}</span>
           </h3>
           <p class='text-sm text-[#8c8484] leading-loose font-light'>
-            My past in the culinary world instilled a relentless focus on
-            precision, discipline, and attention to detail. I bring that same
-            dedication to designing clean, maintainable codebases and intuitive
-            mobile and web solutions.
+            <span class='lang-en'>{about.cards.craft.desc.en}</span>
+            <span class='lang-ja'>{about.cards.craft.desc.ja}</span>
           </p>
         </div>
         <div class='md:col-span-2 pt-6 border-t border-[#8c8484]/10'>
           <h3
             class='text-[10px] tracking-[0.2em] uppercase font-bold text-[#8c8484] mb-3'
           >
-            Global Horizons & Communication
+            <span class='lang-en'>{about.cards.global.title.en}</span>
+            <span class='lang-ja'>{about.cards.global.title.ja}</span>
           </h3>
           <p class='text-sm text-[#8c8484] leading-loose font-light'>
-            Living and programming in Tokyo. Bilingual in Spanish and English
-            (IELTS 5.5), and actively advancing in Japanese (日本語) to
-            collaborate in diverse, multicultural engineering teams.
+            <span class='lang-en'>{about.cards.global.desc.en}</span>
+            <span class='lang-ja'>{about.cards.global.desc.ja}</span>
           </p>
         </div>
       </div>
+
       <div class='pt-8 flex flex-wrap items-center gap-8'>
         <a class='group inline-flex flex-col no-underline' href='#contact'>
           <span
             class='text-xl font-semibold group-hover:text-[#bf3a2b] text-[#000000] transition-colors'
-            >Collaborate with me</span
           >
+            <span class='lang-en'>{about.collaborate.en}</span>
+            <span class='lang-ja'>{about.collaborate.ja}</span>
+          </span>
           <span
             class='h-px w-full bg-[#2d2a2a] group-hover:bg-[#bf3a2b] transition-all'
           ></span>
@@ -82,7 +108,8 @@
           class='inline-flex items-center gap-2 border border-[#bf3a2b] text-[#bf3a2b] hover:bg-[#bf3a2b] hover:text-white px-5 py-2.5 text-xs tracking-widest uppercase font-medium transition-all duration-300 rounded-sm'
         >
           <span class='material-symbols-outlined text-sm'>download</span>
-          Download CV
+          <span class='lang-en'>{about.downloadCV.en}</span>
+          <span class='lang-ja'>{about.downloadCV.ja}</span>
         </a>
       </div>
     </div>

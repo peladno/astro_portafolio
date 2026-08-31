@@ -1,17 +1,23 @@
+---
+import { translations } from '../i18n/translations';
+const { contact } = translations;
+---
+
 <section
   class='max-w-4xl mx-auto py-32 border-t border-[#8c8484]/10 text-center'
   id='contact'
 >
   <div class='flex flex-col items-center'>
     <div class='hanko-large mb-12 shadow-sm'>
-      <span class='text-base font-semibold'>ハビエル</span>
+      <span class='text-base font-semibold'>{contact.hanko}</span>
     </div>
     <h2 class='text-4xl md:text-5xl serif-thin mb-6'>
-      Let's build something beautiful together
+      <span class='lang-en'>{contact.title.en}</span>
+      <span class='lang-ja'>{contact.title.ja}</span>
     </h2>
     <p class='text-[#8c8484] font-light max-w-md mx-auto mb-16 leading-relaxed'>
-      Available for web and mobile engineering opportunities, freelance
-      collaborations, and challenging software projects.
+      <span class='lang-en'>{contact.description.en}</span>
+      <span class='lang-ja'>{contact.description.ja}</span>
     </p>
     <div class='space-y-12'>
       <a
@@ -43,7 +49,7 @@
             >code</span
           >
           <span class='text-[9px] uppercase tracking-[0.2em] font-medium'
-            >GitHub</span
+            >{contact.github}</span
           >
         </a>
         <a
@@ -57,7 +63,7 @@
             >groups</span
           >
           <span class='text-[9px] uppercase tracking-[0.2em] font-medium'
-            >LinkedIn</span
+            >{contact.linkedin}</span
           >
         </a>
         <a
@@ -70,9 +76,10 @@
             class='material-symbols-outlined text-2xl group-hover:scale-110 transition-transform'
             >description</span
           >
-          <span class='text-[9px] uppercase tracking-[0.2em] font-medium'
-            >CV PDF</span
-          >
+          <span class='text-[9px] uppercase tracking-[0.2em] font-medium'>
+            <span class='lang-en'>{contact.cvPdf.en}</span>
+            <span class='lang-ja'>{contact.cvPdf.ja}</span>
+          </span>
         </a>
       </div>
     </div>
