@@ -1,25 +1,36 @@
+---
+import { translations } from '../i18n/translations';
+const { footer } = translations;
+---
+
 <footer
   class='px-6 md:px-24 py-12 border-t border-[#8c8484]/5 flex flex-col md:flex-row justify-between items-center text-[10px] tracking-widest uppercase text-[#8c8484] opacity-60'
 >
-  <div>© 2026 Javier Pérez Urrutia — All Rights Reserved</div>
+  <div>
+    <span class='lang-en'>{footer.copyright.en}</span>
+    <span class='lang-ja'>{footer.copyright.ja}</span>
+  </div>
   <div class='flex space-x-8 mt-4 md:mt-0'>
     <a
       class='hover:text-[#bf3a2b] visited:text-[#8c8484] transition-colors'
       href='https://github.com/peladno'
       target='_blank'
-      rel='noopener noreferrer'>Github</a
+      rel='noopener noreferrer'>{footer.github}</a
     >
     <a
       class='hover:text-[#bf3a2b] visited:text-[#8c8484] transition-colors'
       href='https://www.linkedin.com/in/javier-perez-u/'
       target='_blank'
-      rel='noopener noreferrer'>LinkedIn</a
+      rel='noopener noreferrer'>{footer.linkedin}</a
     >
     <a
       class='hover:text-[#bf3a2b] visited:text-[#8c8484] transition-colors'
       href='/JavierCurriculum.pdf'
       target='_blank'
-      rel='noopener noreferrer'>CV</a
+      rel='noopener noreferrer'
     >
+      <span class='lang-en'>{footer.cv.en}</span>
+      <span class='lang-ja'>{footer.cv.ja}</span>
+    </a>
   </div>
 </footer>

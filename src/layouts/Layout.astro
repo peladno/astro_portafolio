@@ -22,6 +22,18 @@ const { title } = Astro.props;
       href='https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap'
       rel='stylesheet'
     />
+    <script is:inline>
+      (function () {
+        const savedLang = localStorage.getItem('portfolio_lang');
+        if (savedLang === 'ja' || savedLang === 'en') {
+          document.documentElement.lang = savedLang;
+        } else if (navigator.language && navigator.language.startsWith('ja')) {
+          document.documentElement.lang = 'ja';
+        } else {
+          document.documentElement.lang = 'en';
+        }
+      })();
+    </script>
     <style>
       @import '../index.css';
     </style>
@@ -52,6 +64,14 @@ const { title } = Astro.props;
       ul,
       li {
         list-style-type: none;
+      }
+
+      /* Language Visibility Rules */
+      html[lang='en'] .lang-ja {
+        display: none !important;
+      }
+      html[lang='ja'] .lang-en {
+        display: none !important;
       }
 
       .serif-thin {
@@ -87,13 +107,6 @@ const { title } = Astro.props;
         position: relative;
         background: rgba(191, 58, 43, 0.05);
       }
-      /* .hanko-large::after {
-        content: '';
-        position: absolute;
-        inset: 2px;
-        border: 1px solid #bf3a2b;
-        opacity: 0.3;
-      } */
       .timeline-line {
         width: 1px;
         background: linear-gradient(

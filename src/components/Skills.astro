@@ -1,53 +1,6 @@
 ---
-interface Skill {
-  icon: string;
-  name: string;
-}
-
-interface SkillGroup {
-  title: string;
-  wide?: boolean;
-  skills: Skill[];
-}
-
-const skillGroups: SkillGroup[] = [
-  {
-    title: 'Systems & Core Languages',
-    skills: [
-      { icon: 'terminal', name: 'C (Systems & Algorithms)' },
-      { icon: 'code', name: 'Python' },
-      { icon: 'code', name: 'JavaScript (ES6+)' },
-      { icon: 'integration_instructions', name: 'Java & Kotlin' },
-    ],
-  },
-  {
-    title: 'Frontend & Mobile',
-    skills: [
-      { icon: 'layers', name: 'React & React Native' },
-      { icon: 'smartphone', name: 'Expo' },
-      { icon: 'palette', name: 'CSS3 / Sass / Bootstrap' },
-      { icon: 'tune', name: 'Redux State Management' },
-    ],
-  },
-  {
-    title: 'Backend & Data',
-    skills: [
-      { icon: 'api', name: 'Node.js & Express' },
-      { icon: 'database', name: 'MongoDB' },
-      { icon: 'storage', name: 'MySQL & SQLite' },
-      { icon: 'local_fire_department', name: 'Firebase' },
-    ],
-  },
-  {
-    title: 'Tools & Workflow',
-    skills: [
-      { icon: 'account_tree', name: 'Git & GitHub' },
-      { icon: 'inventory_2', name: 'Docker' },
-      { icon: 'view_kanban', name: 'Agile (Scrum / Jira)' },
-      { icon: 'view_quilt', name: 'Material UI' },
-    ],
-  },
-];
+import { translations } from '../i18n/translations';
+const { skills } = translations;
 ---
 
 <section
@@ -59,16 +12,19 @@ const skillGroups: SkillGroup[] = [
       <h2
         class='text-xs tracking-[0.4em] uppercase text-[#bf3a2b] font-bold mb-8 flex items-center'
       >
-        <span class='mr-4'>02</span> Skills
+        <span class='mr-4'>{skills.sectionNum}</span>
+        <span class='lang-en'>{skills.sectionTitle.en}</span>
+        <span class='lang-ja'>{skills.sectionTitle.ja}</span>
       </h2>
     </div>
     <div class='md:col-span-8'>
       <div class='grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16'>
         {
-          skillGroups.map((group) => (
+          skills.groups.map((group) => (
             <div class:list={['space-y-6', group.wide && 'md:col-span-2']}>
               <h3 class='text-[10px] tracking-[0.2em] uppercase font-bold text-[#8c8484]'>
-                {group.title}
+                <span class='lang-en'>{group.titleEn}</span>
+                <span class='lang-ja'>{group.titleJa}</span>
               </h3>
               <ul
                 class:list={[
