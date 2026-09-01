@@ -22,13 +22,13 @@ const { skills } = translations;
         {
           skills.groups.map((group) => (
             <div class:list={['space-y-6', group.wide && 'md:col-span-2']}>
-              <h3 class='text-[10px] tracking-[0.2em] uppercase font-bold text-[#8c8484]'>
+              <h3 class='text-[10px] tracking-[0.2em] uppercase font-bold text-[#5a5252] min-h-[1.25rem] flex items-center'>
                 <span class='lang-en'>{group.titleEn}</span>
                 <span class='lang-ja'>{group.titleJa}</span>
               </h3>
               <ul
                 class:list={[
-                  'text-sm font-light',
+                  'text-sm font-normal text-[#2d2a2a]',
                   group.wide ? 'flex flex-wrap gap-x-12 gap-y-4' : 'space-y-4',
                 ]}
               >
