@@ -7,58 +7,40 @@ const { nav } = translations;
   class='fixed top-0 left-0 right-0 p-3 sm:p-4 md:p-6 z-50 bg-[#f8f6f6]/95 md:bg-transparent backdrop-blur-md flex items-center justify-end gap-3 sm:gap-6 border-b border-[#8c8484]/5 md:border-b-0'
 >
   <ul
-    class='flex flex-wrap items-center justify-end gap-x-3.5 sm:gap-x-6 md:gap-x-8 gap-y-2 text-[9px] sm:text-[10px] tracking-[0.15em] sm:tracking-[0.2em] uppercase font-medium text-[#8c8484]'
+    class='flex flex-wrap items-center justify-end gap-x-3.5 sm:gap-x-6 md:gap-x-8 gap-y-2 text-[9px] sm:text-[10px] tracking-[0.15em] sm:tracking-[0.2em] uppercase font-medium text-[#5a5252]'
   >
     <li>
-      <a
-        class='hover:text-[#bf3a2b] visited:text-[#8c8484] no-underline transition-colors'
-        href='#home'
-      >
+      <a class='nav-link py-1' href='#home'>
         <span class='lang-en'>{nav.home.en}</span>
         <span class='lang-ja'>{nav.home.ja}</span>
       </a>
     </li>
     <li>
-      <a
-        class='hover:text-[#bf3a2b] visited:text-[#8c8484] no-underline transition-colors'
-        href='#about'
-      >
+      <a class='nav-link py-1' href='#about'>
         <span class='lang-en'>{nav.about.en}</span>
         <span class='lang-ja'>{nav.about.ja}</span>
       </a>
     </li>
     <li>
-      <a
-        class='hover:text-[#bf3a2b] visited:text-[#8c8484] no-underline transition-colors'
-        href='#skills'
-      >
+      <a class='nav-link py-1' href='#skills'>
         <span class='lang-en'>{nav.skills.en}</span>
         <span class='lang-ja'>{nav.skills.ja}</span>
       </a>
     </li>
     <li>
-      <a
-        class='hover:text-[#bf3a2b] visited:text-[#8c8484] no-underline transition-colors'
-        href='#projects'
-      >
+      <a class='nav-link py-1' href='#projects'>
         <span class='lang-en'>{nav.projects.en}</span>
         <span class='lang-ja'>{nav.projects.ja}</span>
       </a>
     </li>
     <li>
-      <a
-        class='hover:text-[#bf3a2b] visited:text-[#8c8484] no-underline transition-colors'
-        href='#experience'
-      >
+      <a class='nav-link py-1' href='#experience'>
         <span class='lang-en'>{nav.experience.en}</span>
         <span class='lang-ja'>{nav.experience.ja}</span>
       </a>
     </li>
     <li>
-      <a
-        class='hover:text-[#bf3a2b] visited:text-[#8c8484] no-underline transition-colors'
-        href='#contact'
-      >
+      <a class='nav-link py-1' href='#contact'>
         <span class='lang-en'>{nav.contact.en}</span>
         <span class='lang-ja'>{nav.contact.ja}</span>
       </a>
@@ -75,10 +57,10 @@ const { nav } = translations;
     <span id='lang-btn-en' class='font-bold text-[#bf3a2b] transition-colors'
       >EN</span
     >
-    <span class='text-[#8c8484]/40'>|</span>
+    <span class='text-[#5a5252]/40'>|</span>
     <span
       id='lang-btn-ja'
-      class='text-[#8c8484] hover:text-[#bf3a2b] transition-colors font-medium'
+      class='text-[#5a5252] hover:text-[#bf3a2b] transition-colors font-medium'
       >日本語</span
     >
   </button>
@@ -88,12 +70,12 @@ const { nav } = translations;
   class='fixed left-6 md:left-14 bottom-12 hidden md:flex flex-col items-center space-y-8 z-40'
 >
   <div
-    class='vertical-text text-[10px] tracking-widest text-[#8c8484] uppercase'
+    class='vertical-text text-[10px] tracking-widest text-[#5a5252] uppercase min-h-[220px] flex items-center justify-center font-medium'
   >
     <span class='lang-en'>{nav.verticalText.en}</span>
     <span class='lang-ja'>{nav.verticalText.ja}</span>
   </div>
-  <div class='w-px h-12 bg-[#8c8484]/30'></div>
+  <div class='w-px h-12 bg-[#5a5252]/30'></div>
 </div>
 
 <script is:inline>
@@ -104,12 +86,12 @@ const { nav } = translations;
 
     if (currentLang === 'ja') {
       btnEn.className =
-        'text-[#8c8484] hover:text-[#bf3a2b] transition-colors font-medium';
+        'text-[#5a5252] hover:text-[#bf3a2b] transition-colors font-medium';
       btnJa.className = 'font-bold text-[#bf3a2b] transition-colors';
     } else {
       btnEn.className = 'font-bold text-[#bf3a2b] transition-colors';
       btnJa.className =
-        'text-[#8c8484] hover:text-[#bf3a2b] transition-colors font-medium';
+        'text-[#5a5252] hover:text-[#bf3a2b] transition-colors font-medium';
     }
   }
 
@@ -135,3 +117,21 @@ const { nav } = translations;
     initLanguage();
   }
 </script>
+
+<style>
+  .nav-link {
+    color: #5a5252;
+    text-decoration: none;
+    transition:
+      color 0.2s ease,
+      transform 0.2s ease;
+    cursor: pointer;
+    display: inline-block;
+  }
+
+  .nav-link:hover,
+  .nav-link:focus,
+  .nav-link:active {
+    color: #bf3a2b !important;
+  }
+</style>

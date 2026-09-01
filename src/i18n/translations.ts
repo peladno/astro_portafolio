@@ -44,7 +44,7 @@ export const translations = {
     contact: { en: 'Contact', ja: '連絡先' },
     verticalText: {
       en: 'JAVIER PÉREZ — DEVELOPER',
-      ja: 'ハビエル・ペレス — 開発者',
+      ja: 'ハビエル・ペレス — デベロッパー',
     },
   },
   hero: {
@@ -52,16 +52,16 @@ export const translations = {
     firstName: 'Javier',
     lastName: 'Pérez',
     role: {
-      en: 'Full Stack & Mobile Developer',
-      ja: 'フルスタック & モバイル開発者',
+      en: 'Frontend & Mobile Developer',
+      ja: 'フロントエンド & モバイルデベロッパー',
     },
     quote: {
       en: '"From culinary precision to software craftsmanship — building clean, resilient, and user-centric digital experiences."',
-      ja: '「製菓の精密さからソフトウェアのクラフトマンシップへ — クリーンで堅牢、ユーザー中心のデジタル体験を創る」',
+      ja: '「製菓の精密さからソフトウェアのクラフトマンシップへ — クリーンでレジリエントな、ユーザー中心のデジタル体験を創る」',
     },
     available: {
       en: 'Available',
-      ja: '受付中',
+      ja: '求職中',
     },
     portraitAlt: {
       en: 'Javier Pérez Portrait',
@@ -87,7 +87,7 @@ export const translations = {
       },
       ja: {
         before:
-          'パティシエ（製菓衛生師）から強い情熱を持ってソフトウェアエンジニアへ転身。現在は ',
+          'パティシエ（製菓職人）から強い情熱を持ってソフトウェアエンジニアへ転身。現在は ',
         school: '42 Tokyo',
         mid: ' に在籍し、低レイヤの基盤である ',
         cLang: 'C言語',
@@ -103,8 +103,8 @@ export const translations = {
       systems: {
         title: { en: '42 Tokyo & Systems', ja: '42 Tokyo & システム開発' },
         desc: {
-          en: 'At 42 Tokyo, I build a rigorous systems foundation through peer-to-peer, project-based engineering. Diving deep into memory management, UNIX architectures, algorithms in C, and scripting in Python.',
-          ja: '42 Tokyoにて、ピアツーピアの実践的な課題を通じて堅牢なシステム基盤を構築。メモリ管理、UNIXアーキテクチャ、C言語によるアルゴリズム実装、Pythonによる自動化スクリプトを深く探求しています。',
+          en: 'At 42 Tokyo, I build a rigorous systems foundation through peer-to-peer, project-based engineering. Diving deep into memory management, algorithms in C, and scripting in Python.',
+          ja: '42 Tokyoにて、P2Pの実践を通じて堅牢なシステム基盤を構築。メモリ管理、C言語によるアルゴリズム実装、Pythonによる自動化スクリプトを深く探求しています。',
         },
       },
       craft: {
@@ -124,7 +124,7 @@ export const translations = {
         },
         desc: {
           en: 'Living and programming in Tokyo. Bilingual in Spanish and English (IELTS 5.5), and actively advancing in Japanese (日本語) to collaborate in diverse, multicultural engineering teams.',
-          ja: '東京在住。スペイン語・英語（IELTS 5.5）のバイリンガルで、多国籍な開発チームで円滑に協働するため日本語（日本語能力試験学習中）の実践も日々行っています。',
+          ja: '東京在住。スペイン語・英語（IELTS 5.5）のバイリンガルで、日本の開発チームで円滑に協働するため日本語（日本語能力試験学習中）の実践も日々行っています。',
         },
       },
     },
@@ -193,7 +193,7 @@ export const translations = {
         descriptionEn:
           'Cross-platform mobile application managing local inventory data with SQLite and Firebase authentication, built with Expo and Redux.',
         descriptionJa:
-          'SQLiteによるローカルデータ永続化とFirebase認証を備えたクロスプラットフォーム在庫管理アプリ（React Native / Expo / Redux）。',
+          'SQLiteによるローカルデータとFirebase認証を備えたクロスプラットフォーム在庫管理アプリ（React Native / Expo / Redux）。',
         skills: ['React Native', 'Redux', 'Expo', 'SQLite', 'Firebase'],
         img: '/images/projects/inventoryapp.png',
         github: 'https://github.com/peladno/inventory-reactNativeApp',
@@ -262,7 +262,7 @@ export const translations = {
         ],
         bulletsJa: [
           'C言語による低レイヤプログラミング：メモリ管理、ポインタ操作、データ構造、UNIXシステム設計。',
-          'ピアツーピアのプロジェクト課題を通じたPythonによるスクリプト開発と自動化。',
+          'P2Pのプロジェクト課題を通じたPythonによるスクリプト開発と自動化。',
         ],
       },
       {

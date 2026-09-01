@@ -50,38 +50,44 @@ const { about } = translations;
       </p>
 
       <div class='grid grid-cols-1 md:grid-cols-2 gap-12 pt-8'>
-        <div>
+        <div class='flex flex-col justify-start'>
           <h3
-            class='text-[10px] tracking-[0.2em] uppercase font-bold text-[#8c8484] mb-4'
+            class='text-[10px] tracking-[0.2em] uppercase font-bold text-[#5a5252] mb-4 min-h-[1.25rem] flex items-center'
           >
             <span class='lang-en'>{about.cards.systems.title.en}</span>
             <span class='lang-ja'>{about.cards.systems.title.ja}</span>
           </h3>
-          <p class='text-sm text-[#8c8484] leading-loose font-light'>
+          <p
+            class='text-sm text-[#5a5252] leading-loose font-normal min-h-[6.5rem]'
+          >
             <span class='lang-en'>{about.cards.systems.desc.en}</span>
             <span class='lang-ja'>{about.cards.systems.desc.ja}</span>
           </p>
         </div>
-        <div>
+        <div class='flex flex-col justify-start'>
           <h3
-            class='text-[10px] tracking-[0.2em] uppercase font-bold text-[#8c8484] mb-4'
+            class='text-[10px] tracking-[0.2em] uppercase font-bold text-[#5a5252] mb-4 min-h-[1.25rem] flex items-center'
           >
             <span class='lang-en'>{about.cards.craft.title.en}</span>
             <span class='lang-ja'>{about.cards.craft.title.ja}</span>
           </h3>
-          <p class='text-sm text-[#8c8484] leading-loose font-light'>
+          <p
+            class='text-sm text-[#5a5252] leading-loose font-normal min-h-[6.5rem]'
+          >
             <span class='lang-en'>{about.cards.craft.desc.en}</span>
             <span class='lang-ja'>{about.cards.craft.desc.ja}</span>
           </p>
         </div>
         <div class='md:col-span-2 pt-6 border-t border-[#8c8484]/10'>
           <h3
-            class='text-[10px] tracking-[0.2em] uppercase font-bold text-[#8c8484] mb-3'
+            class='text-[10px] tracking-[0.2em] uppercase font-bold text-[#5a5252] mb-3 min-h-[1.25rem] flex items-center'
           >
             <span class='lang-en'>{about.cards.global.title.en}</span>
             <span class='lang-ja'>{about.cards.global.title.ja}</span>
           </h3>
-          <p class='text-sm text-[#8c8484] leading-loose font-light'>
+          <p
+            class='text-sm text-[#5a5252] leading-loose font-normal min-h-[3.5rem]'
+          >
             <span class='lang-en'>{about.cards.global.desc.en}</span>
             <span class='lang-ja'>{about.cards.global.desc.ja}</span>
           </p>
@@ -91,7 +97,7 @@ const { about } = translations;
       <div class='pt-8 flex flex-wrap items-center gap-8'>
         <a class='group inline-flex flex-col no-underline' href='#contact'>
           <span
-            class='text-xl font-semibold group-hover:text-[#bf3a2b] text-[#000000] transition-colors'
+            class='text-xl font-semibold group-hover:text-[#bf3a2b] text-[#2d2a2a] transition-colors min-h-[1.75rem] flex items-center'
           >
             <span class='lang-en'>{about.collaborate.en}</span>
             <span class='lang-ja'>{about.collaborate.ja}</span>
@@ -105,7 +111,7 @@ const { about } = translations;
           href='/JavierCurriculum.pdf'
           target='_blank'
           rel='noopener noreferrer'
-          class='inline-flex items-center gap-2 border border-[#bf3a2b] text-[#bf3a2b] hover:bg-[#bf3a2b] hover:text-white px-5 py-2.5 text-xs tracking-widest uppercase font-medium transition-all duration-300 rounded-sm'
+          class='inline-flex items-center justify-center gap-2 border border-[#bf3a2b] text-[#bf3a2b] hover:bg-[#bf3a2b] hover:text-white px-5 py-2.5 text-xs tracking-widest uppercase font-medium transition-all duration-300 rounded-sm min-w-[170px] sm:min-w-[190px]'
         >
           <span class='material-symbols-outlined text-sm'>download</span>
           <span class='lang-en'>{about.downloadCV.en}</span>
