@@ -9,7 +9,7 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang='en' class='light'>
+<html lang='en'>
   <head>
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width' />
@@ -34,17 +34,30 @@ const { title } = Astro.props;
         } else {
           document.documentElement.lang = 'en';
         }
+
+        const savedTheme = localStorage.getItem('portfolio_theme');
+        const prefersDark = window.matchMedia(
+          '(prefers-color-scheme: dark)',
+        ).matches;
+        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
       })();
     </script>
   </head>
   <body
-    class='bg-[#f8f6f6] text-[#2d2a2a] selection:bg-[#bf3a2b]/30 selection:text-white antialiased'
+    class='bg-[#f8f6f6] dark:bg-[#121111] text-[#2d2a2a] dark:text-[#f3eded] selection:bg-[#bf3a2b]/30 dark:selection:bg-[#e05343]/30 selection:text-white antialiased transition-colors duration-300'
   >
     <!-- Vertical Guide Line -->
     <div
-      class='fixed left-8 md:left-16 top-0 bottom-0 w-px bg-[#bf3a2b]/20 hidden md:block z-0'
+      class='fixed left-8 md:left-16 top-0 bottom-0 w-px bg-[#bf3a2b]/20 dark:bg-[#e05343]/20 hidden md:block z-0 pointer-events-none'
     >
-      <div class='absolute top-0 left-0 w-full h-1/4 bg-[#bf3a2b]'></div>
+      <div
+        class='absolute top-0 left-0 w-full h-1/4 bg-[#bf3a2b] dark:bg-[#e05343]'
+      >
+      </div>
     </div>
 
     <slot />
@@ -113,6 +126,10 @@ const { title } = Astro.props;
         letter-spacing: 0.18em;
         line-height: 1;
         background: rgba(191, 58, 43, 0.04);
+        transition:
+          border-color 0.3s,
+          color 0.3s,
+          background-color 0.3s;
       }
       .hanko-large {
         min-width: 52px;
@@ -126,6 +143,20 @@ const { title } = Astro.props;
         letter-spacing: 0.25em;
         position: relative;
         background: rgba(191, 58, 43, 0.05);
+        transition:
+          border-color 0.3s,
+          color 0.3s,
+          background-color 0.3s;
+      }
+      .dark .hanko {
+        border-color: #e05343;
+        color: #e05343;
+        background: rgba(224, 83, 67, 0.12);
+      }
+      .dark .hanko-large {
+        border-color: #e05343;
+        color: #e05343;
+        background: rgba(224, 83, 67, 0.12);
       }
       .timeline-line {
         width: 1px;
@@ -137,6 +168,16 @@ const { title } = Astro.props;
           transparent
         );
         opacity: 0.2;
+      }
+      .dark .timeline-line {
+        background: linear-gradient(
+          to bottom,
+          transparent,
+          #e05343 10%,
+          #e05343 90%,
+          transparent
+        );
+        opacity: 0.35;
       }
     </style>
   </body>

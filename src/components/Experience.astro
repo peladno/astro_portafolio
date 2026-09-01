@@ -4,7 +4,7 @@ const { experience } = translations;
 ---
 
 <section
-  class='max-w-4xl mx-auto py-24 border-t border-[#8c8484]/10'
+  class='max-w-4xl mx-auto py-24 border-t border-[#8c8484]/10 dark:border-white/10 transition-colors duration-300'
   id='experience'
 >
   <div
@@ -12,13 +12,13 @@ const { experience } = translations;
   >
     <div>
       <h2
-        class='text-xs tracking-[0.4em] uppercase text-[#bf3a2b] font-bold mb-4 flex items-center'
+        class='text-xs tracking-[0.4em] uppercase text-[#bf3a2b] dark:text-[#e05343] font-bold mb-4 flex items-center transition-colors duration-300'
       >
         <span class='mr-4'>{experience.sectionNum}</span>
         <span class='lang-en'>{experience.sectionTitle.en}</span>
         <span class='lang-ja'>{experience.sectionTitle.ja}</span>
       </h2>
-      <p class='text-[#5a5252] font-normal italic text-sm'>
+      <p class='text-[#5a5252] dark:text-[#a89f9f] font-normal italic text-sm'>
         <span class='lang-en'>{experience.subtitle.en}</span>
         <span class='lang-ja'>{experience.subtitle.ja}</span>
       </p>
@@ -47,13 +47,13 @@ const { experience } = translations;
                   isEven ? 'pr-12 text-right' : 'pl-12 text-left',
                 ]}
               >
-                <span class='text-[10px] font-bold tracking-widest text-[#bf3a2b] uppercase'>
+                <span class='text-[10px] font-bold tracking-widest text-[#bf3a2b] dark:text-[#e05343] uppercase'>
                   <span class='lang-en'>{item.periodEn}</span>
                   <span class='lang-ja'>{item.periodJa}</span>
                 </span>
               </div>
 
-              <div class='absolute left-0 md:left-1/2 top-2 w-3 h-3 bg-[#bf3a2b] rounded-full transform -translate-x-1/2 z-10 border-4 border-[#f8f6f6]' />
+              <div class='absolute left-0 md:left-1/2 top-2 w-3 h-3 bg-[#bf3a2b] dark:bg-[#e05343] rounded-full transform -translate-x-1/2 z-10 border-4 border-[#f8f6f6] dark:border-[#121111] transition-colors duration-300' />
 
               <div
                 class:list={[
@@ -61,13 +61,13 @@ const { experience } = translations;
                   isEven ? 'md:pl-12' : 'md:pl-0 md:pr-12 md:text-right',
                 ]}
               >
-                <span class='md:hidden block text-[10px] font-bold tracking-widest text-[#bf3a2b] uppercase mb-2'>
+                <span class='md:hidden block text-[10px] font-bold tracking-widest text-[#bf3a2b] dark:text-[#e05343] uppercase mb-2'>
                   <span class='lang-en'>{item.periodEn}</span>
                   <span class='lang-ja'>{item.periodJa}</span>
                 </span>
 
                 <h3
-                  class='text-xl serif-thin mb-1 min-h-[1.75rem] flex items-center text-[#2d2a2a]'
+                  class='text-xl serif-thin mb-1 min-h-[1.75rem] flex items-center text-[#2d2a2a] dark:text-[#f3eded]'
                   class:list={[!isEven && 'md:justify-end']}
                 >
                   <span class='lang-en'>{item.titleEn}</span>
@@ -75,7 +75,7 @@ const { experience } = translations;
                 </h3>
 
                 <p
-                  class='text-[#5a5252] text-xs mb-4 uppercase tracking-widest min-h-[1.25rem] flex items-center font-medium'
+                  class='text-[#5a5252] dark:text-[#a89f9f] text-xs mb-4 uppercase tracking-widest min-h-[1.25rem] flex items-center font-medium'
                   class:list={[!isEven && 'md:justify-end']}
                 >
                   <span class='lang-en'>{item.organizationEn}</span>
@@ -83,7 +83,7 @@ const { experience } = translations;
                 </p>
 
                 <!-- English Bullets -->
-                <ul class='lang-en space-y-3 text-sm font-normal leading-relaxed text-[#5a5252]'>
+                <ul class='lang-en space-y-3 text-sm font-normal leading-relaxed text-[#5a5252] dark:text-[#a89f9f]'>
                   {item.bulletsEn.map((bullet) => (
                     <li
                       class:list={[
@@ -93,7 +93,7 @@ const { experience } = translations;
                     >
                       <span
                         class:list={[
-                          'text-[#bf3a2b]',
+                          'text-[#bf3a2b] dark:text-[#e05343]',
                           isEven
                             ? 'mr-3'
                             : 'ml-0 md:ml-3 mr-3 md:mr-0',
@@ -107,7 +107,7 @@ const { experience } = translations;
                 </ul>
 
                 <!-- Japanese Bullets -->
-                <ul class='lang-ja space-y-3 text-sm font-normal leading-relaxed text-[#5a5252]'>
+                <ul class='lang-ja space-y-3 text-sm font-normal leading-relaxed text-[#5a5252] dark:text-[#a89f9f]'>
                   {item.bulletsJa.map((bullet) => (
                     <li
                       class:list={[
@@ -117,7 +117,7 @@ const { experience } = translations;
                     >
                       <span
                         class:list={[
-                          'text-[#bf3a2b]',
+                          'text-[#bf3a2b] dark:text-[#e05343]',
                           isEven
                             ? 'mr-3'
                             : 'ml-0 md:ml-3 mr-3 md:mr-0',
