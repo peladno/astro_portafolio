@@ -4,13 +4,13 @@ const { about } = translations;
 ---
 
 <section
-  class='max-w-4xl mx-auto py-24 border-t border-[#8c8484]/10'
+  class='max-w-4xl mx-auto py-24 border-t border-[#8c8484]/10 dark:border-white/10 transition-colors duration-300'
   id='about'
 >
   <div class='grid grid-cols-1 md:grid-cols-12 gap-12'>
     <div class='md:col-span-4'>
       <h2
-        class='text-xs tracking-[0.4em] uppercase text-[#bf3a2b] font-bold mb-8 flex items-center'
+        class='text-xs tracking-[0.4em] uppercase text-[#bf3a2b] dark:text-[#e05343] font-bold mb-8 flex items-center transition-colors duration-300'
       >
         <span class='mr-4'>{about.sectionNum}</span>
         <span class='lang-en'>{about.sectionTitle.en}</span>
@@ -18,47 +18,57 @@ const { about } = translations;
       </h2>
     </div>
     <div class='md:col-span-8 space-y-12'>
-      <p class='text-xl md:text-2xl font-light leading-relaxed text-[#2d2a2a]'>
+      <p
+        class='text-xl md:text-2xl font-light leading-relaxed text-[#2d2a2a] dark:text-[#f3eded] transition-colors duration-300'
+      >
         <!-- English Intro -->
         <span class='lang-en'>
-          {about.intro.en.before}<span class='font-medium text-[#2d2a2a]'
+          {about.intro.en.before}<span
+            class='font-medium text-[#2d2a2a] dark:text-[#f3eded]'
             >{about.intro.en.school}</span
-          >{about.intro.en.mid}<span class='text-[#bf3a2b] italic'
+          >{about.intro.en.mid}<span
+            class='text-[#bf3a2b] dark:text-[#e05343] italic'
             >{about.intro.en.cLang}</span
-          >{about.intro.en.and}<span class='text-[#bf3a2b] italic'
+          >{about.intro.en.and}<span
+            class='text-[#bf3a2b] dark:text-[#e05343] italic'
             >{about.intro.en.pythonLang}</span
-          >{about.intro.en.after}<span class='font-medium'
+          >{about.intro.en.after}<span
+            class='font-medium text-[#2d2a2a] dark:text-[#f3eded]'
             >{about.intro.en.react}</span
-          >, <span class='font-medium'>{about.intro.en.reactNative}</span>{
-            about.intro.en.backend
-          }
+          >, <span class='font-medium text-[#2d2a2a] dark:text-[#f3eded]'
+            >{about.intro.en.reactNative}</span
+          >{about.intro.en.backend}
         </span>
         <!-- Japanese Intro -->
         <span class='lang-ja'>
-          {about.intro.ja.before}<span class='font-medium text-[#2d2a2a]'
+          {about.intro.ja.before}<span
+            class='font-medium text-[#2d2a2a] dark:text-[#f3eded]'
             >{about.intro.ja.school}</span
-          >{about.intro.ja.mid}<span class='text-[#bf3a2b] italic'
+          >{about.intro.ja.mid}<span
+            class='text-[#bf3a2b] dark:text-[#e05343] italic'
             >{about.intro.ja.cLang}</span
-          >{about.intro.ja.and}<span class='text-[#bf3a2b] italic'
+          >{about.intro.ja.and}<span
+            class='text-[#bf3a2b] dark:text-[#e05343] italic'
             >{about.intro.ja.pythonLang}</span
-          >{about.intro.ja.after}<span class='font-medium'
+          >{about.intro.ja.after}<span
+            class='font-medium text-[#2d2a2a] dark:text-[#f3eded]'
             >{about.intro.ja.react}</span
-          >、<span class='font-medium'>{about.intro.ja.reactNative}</span>{
-            about.intro.ja.backend
-          }
+          >、<span class='font-medium text-[#2d2a2a] dark:text-[#f3eded]'
+            >{about.intro.ja.reactNative}</span
+          >{about.intro.ja.backend}
         </span>
       </p>
 
       <div class='grid grid-cols-1 md:grid-cols-2 gap-12 pt-8'>
         <div class='flex flex-col justify-start'>
           <h3
-            class='text-[10px] tracking-[0.2em] uppercase font-bold text-[#5a5252] mb-4 min-h-[1.25rem] flex items-center'
+            class='text-[10px] tracking-[0.2em] uppercase font-bold text-[#5a5252] dark:text-[#a89f9f] mb-4 min-h-[1.25rem] flex items-center'
           >
             <span class='lang-en'>{about.cards.systems.title.en}</span>
             <span class='lang-ja'>{about.cards.systems.title.ja}</span>
           </h3>
           <p
-            class='text-sm text-[#5a5252] leading-loose font-normal min-h-[6.5rem]'
+            class='text-sm text-[#5a5252] dark:text-[#a89f9f] leading-loose font-normal min-h-[6.5rem]'
           >
             <span class='lang-en'>{about.cards.systems.desc.en}</span>
             <span class='lang-ja'>{about.cards.systems.desc.ja}</span>
@@ -66,27 +76,29 @@ const { about } = translations;
         </div>
         <div class='flex flex-col justify-start'>
           <h3
-            class='text-[10px] tracking-[0.2em] uppercase font-bold text-[#5a5252] mb-4 min-h-[1.25rem] flex items-center'
+            class='text-[10px] tracking-[0.2em] uppercase font-bold text-[#5a5252] dark:text-[#a89f9f] mb-4 min-h-[1.25rem] flex items-center'
           >
             <span class='lang-en'>{about.cards.craft.title.en}</span>
             <span class='lang-ja'>{about.cards.craft.title.ja}</span>
           </h3>
           <p
-            class='text-sm text-[#5a5252] leading-loose font-normal min-h-[6.5rem]'
+            class='text-sm text-[#5a5252] dark:text-[#a89f9f] leading-loose font-normal min-h-[6.5rem]'
           >
             <span class='lang-en'>{about.cards.craft.desc.en}</span>
             <span class='lang-ja'>{about.cards.craft.desc.ja}</span>
           </p>
         </div>
-        <div class='md:col-span-2 pt-6 border-t border-[#8c8484]/10'>
+        <div
+          class='md:col-span-2 pt-6 border-t border-[#8c8484]/10 dark:border-white/10'
+        >
           <h3
-            class='text-[10px] tracking-[0.2em] uppercase font-bold text-[#5a5252] mb-3 min-h-[1.25rem] flex items-center'
+            class='text-[10px] tracking-[0.2em] uppercase font-bold text-[#5a5252] dark:text-[#a89f9f] mb-3 min-h-[1.25rem] flex items-center'
           >
             <span class='lang-en'>{about.cards.global.title.en}</span>
             <span class='lang-ja'>{about.cards.global.title.ja}</span>
           </h3>
           <p
-            class='text-sm text-[#5a5252] leading-loose font-normal min-h-[3.5rem]'
+            class='text-sm text-[#5a5252] dark:text-[#a89f9f] leading-loose font-normal min-h-[3.5rem]'
           >
             <span class='lang-en'>{about.cards.global.desc.en}</span>
             <span class='lang-ja'>{about.cards.global.desc.ja}</span>
@@ -97,13 +109,13 @@ const { about } = translations;
       <div class='pt-8 flex flex-wrap items-center gap-8'>
         <a class='group inline-flex flex-col no-underline' href='#contact'>
           <span
-            class='text-xl font-semibold group-hover:text-[#bf3a2b] text-[#2d2a2a] transition-colors min-h-[1.75rem] flex items-center'
+            class='text-xl font-semibold group-hover:text-[#bf3a2b] dark:group-hover:text-[#e05343] text-[#2d2a2a] dark:text-[#f3eded] transition-colors min-h-[1.75rem] flex items-center'
           >
             <span class='lang-en'>{about.collaborate.en}</span>
             <span class='lang-ja'>{about.collaborate.ja}</span>
           </span>
           <span
-            class='h-px w-full bg-[#2d2a2a] group-hover:bg-[#bf3a2b] transition-all'
+            class='h-px w-full bg-[#2d2a2a] dark:bg-[#f3eded] group-hover:bg-[#bf3a2b] dark:group-hover:bg-[#e05343] transition-all'
           ></span>
         </a>
 
@@ -111,7 +123,7 @@ const { about } = translations;
           href='/JavierCurriculum.pdf'
           target='_blank'
           rel='noopener noreferrer'
-          class='inline-flex items-center justify-center gap-2 border border-[#bf3a2b] text-[#bf3a2b] hover:bg-[#bf3a2b] hover:text-white px-5 py-2.5 text-xs tracking-widest uppercase font-medium transition-all duration-300 rounded-sm min-w-[170px] sm:min-w-[190px]'
+          class='inline-flex items-center justify-center gap-2 border border-[#bf3a2b] dark:border-[#e05343] dark:text-[#e05343] hover:bg-[#bf3a2b] dark:hover:bg-[#e05343] hover:text-white px-5 py-2.5 text-xs tracking-widest uppercase font-medium transition-all duration-300 rounded-sm min-w-[170px] sm:min-w-[190px]'
         >
           <span class='material-symbols-outlined text-sm'>download</span>
           <span class='lang-en'>{about.downloadCV.en}</span>

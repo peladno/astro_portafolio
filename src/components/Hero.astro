@@ -13,16 +13,16 @@ const { hero } = translations;
       <span class='hanko text-xs'>{hero.seal}</span>
     </div>
     <h1
-      class='text-5xl sm:text-6xl md:text-8xl serif-thin leading-tight mb-3 md:mb-4 text-[#2d2a2a]'
+      class='text-5xl sm:text-6xl md:text-8xl serif-thin leading-tight mb-3 md:mb-4 text-[#2d2a2a] dark:text-[#f3eded]'
     >
       {hero.firstName}
       <br />
       <span class='italic ml-4 sm:ml-8 md:ml-16'>{hero.lastName}</span>
     </h1>
     <div class='flex items-center space-x-3 sm:space-x-4 mt-4 md:mt-8'>
-      <div class='h-px w-8 sm:w-12 bg-[#bf3a2b]'></div>
+      <div class='h-px w-8 sm:w-12 bg-[#bf3a2b] dark:bg-[#e05343]'></div>
       <p
-        class='text-xs sm:text-sm tracking-[0.2em] sm:tracking-[0.25em] md:tracking-[0.3em] uppercase text-[#5a5252] font-normal min-h-[1.5rem] flex items-center'
+        class='text-xs sm:text-sm tracking-[0.2em] sm:tracking-[0.25em] md:tracking-[0.3em] uppercase text-[#5a5252] dark:text-[#a89f9f] font-normal min-h-[1.5rem] flex items-center'
       >
         <span class='lang-en'>{hero.role.en}</span>
         <span class='lang-ja'>{hero.role.ja}</span>
@@ -31,7 +31,9 @@ const { hero } = translations;
     <div
       class='mt-8 sm:mt-12 md:mt-24 max-w-sm min-h-[4rem] sm:min-h-[4.5rem] flex items-start'
     >
-      <p class='text-sm font-normal italic text-[#5a5252] leading-relaxed'>
+      <p
+        class='text-sm font-normal italic text-[#5a5252] dark:text-[#a89f9f] leading-relaxed'
+      >
         <span class='lang-en'>{hero.quote.en}</span>
         <span class='lang-ja'>{hero.quote.ja}</span>
       </p>
@@ -44,11 +46,11 @@ const { hero } = translations;
   >
     <div class='relative group'>
       <div
-        class='absolute -inset-3 md:-inset-4 border border-[#bf3a2b]/20 rounded-full transition-all group-hover:inset-0'
+        class='absolute -inset-3 md:-inset-4 border border-[#bf3a2b]/20 dark:border-[#e05343]/30 rounded-full transition-all group-hover:inset-0'
       >
       </div>
       <div
-        class='w-36 h-36 sm:w-48 sm:h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-[#f8f6f6] shadow-2xl grayscale-0 md:grayscale md:hover:grayscale-0 md:group-hover:grayscale-0 transition-all duration-700'
+        class='w-36 h-36 sm:w-48 sm:h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-[#f8f6f6] dark:border-[#1c1a1a] shadow-2xl grayscale-0 md:grayscale md:hover:grayscale-0 md:group-hover:grayscale-0 transition-all duration-700'
       >
         <img
           alt={hero.portraitAlt.en}
@@ -57,7 +59,7 @@ const { hero } = translations;
         />
       </div>
       <div
-        class='absolute bottom-1 -right-1 sm:bottom-2 sm:-right-2 md:bottom-4 md:-right-4 bg-[#bf3a2b] text-white text-[9px] sm:text-[10px] py-1 px-2.5 sm:py-1.5 sm:px-3 md:py-2 md:px-4 rounded-full tracking-widest uppercase font-medium shadow-sm min-w-[70px] sm:min-w-[80px] md:min-w-[95px] text-center flex items-center justify-center'
+        class='absolute bottom-1 -right-1 sm:bottom-2 sm:-right-2 md:bottom-4 md:-right-4 bg-[#bf3a2b] dark:bg-[#e05343] text-white text-[9px] sm:text-[10px] py-1 px-2.5 sm:py-1.5 sm:px-3 md:py-2 md:px-4 rounded-full tracking-widest uppercase font-medium shadow-sm min-w-[70px] sm:min-w-[80px] md:min-w-[95px] text-center flex items-center justify-center'
       >
         <span class='lang-en'>{hero.available.en}</span>
         <span class='lang-ja'>{hero.available.ja}</span>

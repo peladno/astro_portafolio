@@ -4,13 +4,13 @@ const { skills } = translations;
 ---
 
 <section
-  class='max-w-4xl mx-auto py-24 border-t border-[#8c8484]/10'
+  class='max-w-4xl mx-auto py-24 border-t border-[#8c8484]/10 dark:border-white/10 transition-colors duration-300'
   id='skills'
 >
   <div class='grid grid-cols-1 md:grid-cols-12 gap-12'>
     <div class='md:col-span-4'>
       <h2
-        class='text-xs tracking-[0.4em] uppercase text-[#bf3a2b] font-bold mb-8 flex items-center'
+        class='text-xs tracking-[0.4em] uppercase text-[#bf3a2b] dark:text-[#e05343] font-bold mb-8 flex items-center transition-colors duration-300'
       >
         <span class='mr-4'>{skills.sectionNum}</span>
         <span class='lang-en'>{skills.sectionTitle.en}</span>
@@ -22,19 +22,19 @@ const { skills } = translations;
         {
           skills.groups.map((group) => (
             <div class:list={['space-y-6', group.wide && 'md:col-span-2']}>
-              <h3 class='text-[10px] tracking-[0.2em] uppercase font-bold text-[#5a5252] min-h-[1.25rem] flex items-center'>
+              <h3 class='text-[10px] tracking-[0.2em] uppercase font-bold text-[#5a5252] dark:text-[#a89f9f] min-h-[1.25rem] flex items-center'>
                 <span class='lang-en'>{group.titleEn}</span>
                 <span class='lang-ja'>{group.titleJa}</span>
               </h3>
               <ul
                 class:list={[
-                  'text-sm font-normal text-[#2d2a2a]',
+                  'text-sm font-normal text-[#2d2a2a] dark:text-[#f3eded]',
                   group.wide ? 'flex flex-wrap gap-x-12 gap-y-4' : 'space-y-4',
                 ]}
               >
                 {group.skills.map((skill) => (
                   <li class='flex items-center space-x-3'>
-                    <span class='material-symbols-outlined text-[#bf3a2b] text-lg'>
+                    <span class='material-symbols-outlined text-[#bf3a2b] dark:text-[#e05343] text-lg'>
                       {skill.icon}
                     </span>
                     <span>{skill.name}</span>

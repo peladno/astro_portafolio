@@ -4,10 +4,10 @@ const { nav } = translations;
 ---
 
 <nav
-  class='fixed top-0 left-0 right-0 p-3 sm:p-4 md:p-6 z-50 bg-[#f8f6f6]/95 md:bg-transparent backdrop-blur-md flex items-center justify-end gap-3 sm:gap-6 border-b border-[#8c8484]/5 md:border-b-0'
+  class='fixed top-0 left-0 right-0 p-3 sm:p-4 md:p-6 z-50 bg-[#f8f6f6]/95 dark:bg-[#121111]/95 md:bg-transparent md:dark:bg-transparent backdrop-blur-md flex items-center justify-end gap-3 sm:gap-4 md:gap-6 border-b border-[#8c8484]/5 dark:border-white/5 md:border-b-0 transition-colors duration-300'
 >
   <ul
-    class='flex flex-wrap items-center justify-end gap-x-3.5 sm:gap-x-6 md:gap-x-8 gap-y-2 text-[9px] sm:text-[10px] tracking-[0.15em] sm:tracking-[0.2em] uppercase font-medium text-[#5a5252]'
+    class='flex flex-wrap items-center justify-end gap-x-3.5 sm:gap-x-6 md:gap-x-8 gap-y-2 text-[9px] sm:text-[10px] tracking-[0.15em] sm:tracking-[0.2em] uppercase font-medium text-[#5a5252] dark:text-[#a89f9f]'
   >
     <li>
       <a class='nav-link py-1' href='#home'>
@@ -47,20 +47,41 @@ const { nav } = translations;
     </li>
   </ul>
 
+  <!-- Theme Switcher Button -->
+  <button
+    id='theme-toggle'
+    type='button'
+    aria-label='Toggle theme / テーマ切替'
+    class='flex items-center justify-center w-14 h-7 text-[13px] border border-[#bf3a2b]/30 hover:border-[#bf3a2b] dark:border-[#e05343]/40 dark:hover:border-[#e05343] bg-white/80 hover:bg-white dark:bg-[#1c1a1a]/80 dark:hover:bg-[#1c1a1a] text-[#5a5252] dark:text-[#f3eded] rounded-sm transition-all duration-300 shadow-xs cursor-pointer select-none'
+  >
+    <span
+      id='theme-icon-dark'
+      class='material-symbols-outlined text-[15px] hidden dark:inline-block text-[#e05343] dark:text-[#5a5252]'
+      >light_mode</span
+    >
+    <span
+      id='theme-icon-light'
+      class='material-symbols-outlined text-[15px] inline-block dark:hidden dark:text-[#e05343] text-[#5a5252]'
+      >dark_mode</span
+    >
+  </button>
+
   <!-- Language Switcher Button -->
   <button
     id='lang-toggle'
     type='button'
     aria-label='Toggle language / 言語切替'
-    class='flex items-center gap-1.5 px-3 py-1 text-[10px] tracking-widest uppercase border border-[#bf3a2b]/30 hover:border-[#bf3a2b] bg-white/80 hover:bg-white text-[#2d2a2a] rounded-sm transition-all duration-300 shadow-xs cursor-pointer select-none'
+    class='flex items-center gap-1.5 px-3 py-1 text-[10px] tracking-widest uppercase border border-[#bf3a2b]/30 hover:border-[#bf3a2b] dark:border-[#e05343]/40 dark:hover:border-[#e05343] bg-white/80 hover:bg-white dark:bg-[#1c1a1a]/80 dark:hover:bg-[#1c1a1a] text-[#2d2a2a] dark:text-[#f3eded] rounded-sm transition-all duration-300 shadow-xs cursor-pointer select-none'
   >
-    <span id='lang-btn-en' class='font-bold text-[#bf3a2b] transition-colors'
+    <span
+      id='lang-btn-en'
+      class='font-bold text-[#bf3a2b] dark:text-[#e05343] transition-colors'
       >EN</span
     >
-    <span class='text-[#5a5252]/40'>|</span>
+    <span class='text-[#5a5252]/40 dark:text-[#a89f9f]/40'>|</span>
     <span
       id='lang-btn-ja'
-      class='text-[#5a5252] hover:text-[#bf3a2b] transition-colors font-medium'
+      class='text-[#5a5252] dark:text-[#a89f9f] hover:text-[#bf3a2b] dark:hover:text-[#e05343] transition-colors font-medium'
       >日本語</span
     >
   </button>
@@ -70,12 +91,15 @@ const { nav } = translations;
   class='fixed left-6 md:left-14 bottom-12 hidden md:flex flex-col items-center space-y-8 z-40'
 >
   <div
-    class='vertical-text text-[10px] tracking-widest text-[#5a5252] uppercase min-h-[220px] flex items-center justify-center font-medium'
+    class='vertical-text text-[10px] tracking-widest text-[#5a5252] dark:text-[#a89f9f] uppercase min-h-[220px] flex items-center justify-center font-medium transition-colors duration-300'
   >
     <span class='lang-en'>{nav.verticalText.en}</span>
     <span class='lang-ja'>{nav.verticalText.ja}</span>
   </div>
-  <div class='w-px h-12 bg-[#5a5252]/30'></div>
+  <div
+    class='w-px h-12 bg-[#5a5252]/30 dark:bg-[#a89f9f]/30 transition-colors duration-300'
+  >
+  </div>
 </div>
 
 <script is:inline>
@@ -84,14 +108,29 @@ const { nav } = translations;
     const btnJa = document.getElementById('lang-btn-ja');
     if (!btnEn || !btnJa) return;
 
+    const isDark = document.documentElement.classList.contains('dark');
+    const activeColor = isDark ? 'text-[#e05343]' : 'text-[#bf3a2b]';
+    const inactiveColor = isDark ? 'text-[#a89f9f]' : 'text-[#5a5252]';
+    const hoverColor = isDark ? 'hover:text-[#e05343]' : 'hover:text-[#bf3a2b]';
+
     if (currentLang === 'ja') {
-      btnEn.className =
-        'text-[#5a5252] hover:text-[#bf3a2b] transition-colors font-medium';
-      btnJa.className = 'font-bold text-[#bf3a2b] transition-colors';
+      btnEn.className = `${inactiveColor} ${hoverColor} transition-colors font-medium`;
+      btnJa.className = `font-bold ${activeColor} transition-colors`;
     } else {
-      btnEn.className = 'font-bold text-[#bf3a2b] transition-colors';
-      btnJa.className =
-        'text-[#5a5252] hover:text-[#bf3a2b] transition-colors font-medium';
+      btnEn.className = `font-bold ${activeColor} transition-colors`;
+      btnJa.className = `${inactiveColor} ${hoverColor} transition-colors font-medium`;
+    }
+  }
+
+  function initTheme() {
+    const themeBtn = document.getElementById('theme-toggle');
+    if (themeBtn) {
+      themeBtn.addEventListener('click', () => {
+        const isDark = document.documentElement.classList.toggle('dark');
+        localStorage.setItem('portfolio_theme', isDark ? 'dark' : 'light');
+        const currentLang = document.documentElement.lang || 'en';
+        updateLanguageButtonUI(currentLang);
+      });
     }
   }
 
@@ -110,11 +149,16 @@ const { nav } = translations;
     }
   }
 
+  function initNavbar() {
+    initTheme();
+    initLanguage();
+  }
+
   // Initialize on page load and astro transitions
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initLanguage);
+    document.addEventListener('DOMContentLoaded', initNavbar);
   } else {
-    initLanguage();
+    initNavbar();
   }
 </script>
 
@@ -129,9 +173,19 @@ const { nav } = translations;
     display: inline-block;
   }
 
+  :global(.dark) .nav-link {
+    color: #a89f9f;
+  }
+
   .nav-link:hover,
   .nav-link:focus,
   .nav-link:active {
     color: #bf3a2b !important;
+  }
+
+  :global(.dark) .nav-link:hover,
+  :global(.dark) .nav-link:focus,
+  :global(.dark) .nav-link:active {
+    color: #e05343 !important;
   }
 </style>
