@@ -239,6 +239,30 @@ export const translations = {
         img: '/images/projects/devsafio.png',
         github: 'https://github.com/dlab-team/c6-frontend',
       },
+      {
+        id: 5,
+        caseNumber: '05',
+        nameEn: '42 python modules',
+        nameJa: '42 pythonモジュール',
+        descriptionEn: 'Python projects for 42 Tokyo school',
+        descriptionJa: '42東京学校のPythonプロジェクト',
+        skills: ['Python'],
+        img: '/images/projects/python_modules.webp',
+        github: 'https://github.com/dlab-team/c6-frontend',
+      },
+      {
+        id: 6,
+        caseNumber: '06',
+        nameEn: 'Shared Calendar API (In progress)',
+        nameJa: '共有カレンダーAPI（進行中）',
+        descriptionEn:
+          'A robust backend API for a shared calendar application, built with Node.js, Express, and TypeScript. This project uses Hexagonal Architecture to ensure modularity, testability, and maintainability.',
+        descriptionJa:
+          'Node.js、Express、TypeScript を使用して構築された共有カレンダーアプリケーション向けの堅牢なバックエンド API です。このプロジェクトでは、モジュール性、テスト容易性、保守性を確保するためにヘキサゴナルアーキテクチャを採用しています',
+        skills: ['Node js, Typescript', 'PostgreSQL'],
+        img: '/images/projects/calendar_api.webp',
+        github: 'https://github.com/dlab-team/c6-frontend',
+      },
     ] as ProjectData[],
   },
   experience: {
