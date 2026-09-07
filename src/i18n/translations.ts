@@ -141,7 +141,7 @@ export const translations = {
         skills: [
           { icon: 'terminal', name: 'C (Systems & Algorithms)' },
           { icon: 'code', name: 'Python' },
-          { icon: 'code', name: 'JavaScript (ES6+)' },
+          { icon: 'code', name: 'Typescript' },
           { icon: 'integration_instructions', name: 'Java & Kotlin' },
         ],
       },
@@ -151,7 +151,7 @@ export const translations = {
         skills: [
           { icon: 'layers', name: 'React & React Native' },
           { icon: 'smartphone', name: 'Expo' },
-          { icon: 'palette', name: 'CSS3 / Sass / Bootstrap' },
+          { icon: 'palette', name: 'CSS3 / Sass / Tailwind' },
           { icon: 'tune', name: 'Redux State Management' },
         ],
       },
