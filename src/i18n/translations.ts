@@ -259,7 +259,7 @@ export const translations = {
           'A robust backend API for a shared calendar application, built with Node.js, Express, and TypeScript. This project uses Hexagonal Architecture to ensure modularity, testability, and maintainability.',
         descriptionJa:
           'Node.js、Express、TypeScript を使用して構築された共有カレンダーアプリケーション向けの堅牢なバックエンド API です。このプロジェクトでは、モジュール性、テスト容易性、保守性を確保するためにヘキサゴナルアーキテクチャを採用しています',
-        skills: ['Node js, Typescript', 'PostgreSQL'],
+        skills: ['Node js', 'Typescript', 'PostgreSQL'],
         img: '/images/projects/calendar_api.webp',
         github: 'https://github.com/dlab-team/c6-frontend',
       },

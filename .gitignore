@@ -10,3 +10,7 @@ coverage/
 # Build & Tool Cache
 .astro/
 .wrangler/
+
+# Private unblurred resume
+public/*_original.pdf
+

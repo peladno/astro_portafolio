@@ -1,14 +1,14 @@
 {
-  "name": "react-example",
+  "name": "javier-perez-portfolio",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "clean": "rm -rf dist server.js",
+    "clean": "node -e \"const fs = require('fs'); fs.rmSync('dist', { recursive: true, force: true }); fs.rmSync('server.js', { force: true })\"",
     "lint": "tsc --noEmit",
     "generate-types": "wrangler types",
     "deploy": "npx astro build && npx wrangler deploy"
