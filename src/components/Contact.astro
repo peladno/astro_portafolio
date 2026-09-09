@@ -73,7 +73,7 @@ const { contact } = translations;
           >
         </a>
         <a
-          class='text-[#5a5252] dark:text-[#a89f9f] hover:text-[#bf3a2b] dark:hover:text-[#e05343] transition-colors flex flex-col items-center gap-2 group w-24'
+          class='lang-en text-[#5a5252] dark:text-[#a89f9f] hover:text-[#bf3a2b] dark:hover:text-[#e05343] transition-colors flex flex-col items-center gap-2 group w-24'
           href='/JavierCurriculum.pdf'
           target='_blank'
           rel='noopener noreferrer'
@@ -84,10 +84,23 @@ const { contact } = translations;
           >
           <span
             class='text-[9px] uppercase tracking-[0.2em] font-medium text-center'
+            >{contact.cvPdf.en}</span
           >
-            <span class='lang-en'>{contact.cvPdf.en}</span>
-            <span class='lang-ja'>{contact.cvPdf.ja}</span>
-          </span>
+        </a>
+        <a
+          class='lang-ja text-[#5a5252] dark:text-[#a89f9f] hover:text-[#bf3a2b] dark:hover:text-[#e05343] transition-colors flex flex-col items-center gap-2 group w-24'
+          href='/JavierCurriculum.pdf'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          <span
+            class='material-symbols-outlined text-2xl group-hover:scale-110 transition-transform'
+            >description</span
+          >
+          <span
+            class='text-[9px] uppercase tracking-[0.2em] font-medium text-center'
+            >{contact.cvPdf.ja}</span
+          >
         </a>
       </div>
     </div>

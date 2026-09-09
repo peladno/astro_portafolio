@@ -10,6 +10,7 @@ coverage/
 # Build & Tool Cache
 .astro/
 .wrangler/
+.pnpm-store/
 
 # Private unblurred resume
 public/*_original.pdf

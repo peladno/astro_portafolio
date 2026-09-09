@@ -123,11 +123,20 @@ const { about } = translations;
           href='/JavierCurriculum.pdf'
           target='_blank'
           rel='noopener noreferrer'
-          class='inline-flex items-center justify-center gap-2 border border-[#bf3a2b] dark:border-[#e05343] dark:text-[#e05343] hover:bg-[#bf3a2b] dark:hover:bg-[#e05343] hover:text-white px-5 py-2.5 text-xs tracking-widest uppercase font-medium transition-all duration-300 rounded-sm min-w-42.5 sm:min-w-47.5'
+          class='lang-en inline-flex items-center justify-center gap-2 border border-[#bf3a2b] dark:border-[#e05343] text-[#bf3a2b] dark:text-[#e05343] hover:bg-[#bf3a2b] dark:hover:bg-[#e05343] hover:text-white dark:hover:text-white px-5 py-2.5 text-xs tracking-widest uppercase font-medium transition-all duration-300 rounded-sm min-w-[170px] sm:min-w-[190px]'
         >
           <span class='material-symbols-outlined text-sm'>download</span>
-          <span class='lang-en'>{about.downloadCV.en}</span>
-          <span class='lang-ja'>{about.downloadCV.ja}</span>
+          <span>{about.downloadCV.en}</span>
+        </a>
+
+        <a
+          href='/JavierCurriculum.pdf'
+          target='_blank'
+          rel='noopener noreferrer'
+          class='lang-ja inline-flex items-center justify-center gap-2 border border-[#bf3a2b] dark:border-[#e05343] text-[#bf3a2b] dark:text-[#e05343] hover:bg-[#bf3a2b] dark:hover:bg-[#e05343] hover:text-white dark:hover:text-white px-5 py-2.5 text-xs tracking-widest uppercase font-medium transition-all duration-300 rounded-sm min-w-[170px] sm:min-w-[190px]'
+        >
+          <span class='material-symbols-outlined text-sm'>download</span>
+          <span>{about.downloadCV.ja}</span>
         </a>
       </div>
     </div>
