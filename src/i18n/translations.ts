@@ -212,23 +212,23 @@ export const translations = {
         web: 'https://eshop-project-29f5e.web.app/',
         github: 'https://github.com/peladno/eshop-project',
       },
+      // {
+      //   id: 3,
+      //   caseNumber: '03',
+      //   nameEn: 'Recipe Generator',
+      //   nameJa: 'レシピジェネレーター',
+      //   descriptionEn:
+      //     'Dynamic recipe generator and culinary catalog application built with Vanilla JavaScript, Sass, and Bootstrap.',
+      //   descriptionJa:
+      //     'Vanilla JavaScript、Sass、Bootstrapで構築した、動的なレシピ検索・提案Webアプリケーション。',
+      //   skills: ['JavaScript', 'HTML5', 'Sass', 'Bootstrap'],
+      //   img: '/images/projects/recipes.png',
+      //   web: 'https://peladno.github.io/JS28160JavierPerez/',
+      //   github: 'https://github.com/peladno/JS28160JavierPerez',
+      // },
       {
         id: 3,
         caseNumber: '03',
-        nameEn: 'Recipe Generator',
-        nameJa: 'レシピジェネレーター',
-        descriptionEn:
-          'Dynamic recipe generator and culinary catalog application built with Vanilla JavaScript, Sass, and Bootstrap.',
-        descriptionJa:
-          'Vanilla JavaScript、Sass、Bootstrapで構築した、動的なレシピ検索・提案Webアプリケーション。',
-        skills: ['JavaScript', 'HTML5', 'Sass', 'Bootstrap'],
-        img: '/images/projects/recipes.png',
-        web: 'https://peladno.github.io/JS28160JavierPerez/',
-        github: 'https://github.com/peladno/JS28160JavierPerez',
-      },
-      {
-        id: 4,
-        caseNumber: '04',
         nameEn: 'DevSafio Platform',
         nameJa: 'DevSafio 就職支援プラットフォーム',
         descriptionEn:
@@ -240,8 +240,8 @@ export const translations = {
         github: 'https://github.com/dlab-team/c6-frontend',
       },
       {
-        id: 5,
-        caseNumber: '05',
+        id: 4,
+        caseNumber: '06',
         nameEn: '42 python modules',
         nameJa: '42 pythonモジュール',
         descriptionEn: 'Python projects for 42 Tokyo school',
@@ -251,8 +251,8 @@ export const translations = {
         github: 'https://github.com/dlab-team/c6-frontend',
       },
       {
-        id: 6,
-        caseNumber: '06',
+        id: 5,
+        caseNumber: '05',
         nameEn: 'Shared Calendar API (In progress)',
         nameJa: '共有カレンダーAPI（進行中）',
         descriptionEn:
@@ -262,6 +262,19 @@ export const translations = {
         skills: ['Node js', 'Typescript', 'PostgreSQL'],
         img: '/images/projects/calendar_api.webp',
         github: 'https://github.com/dlab-team/c6-frontend',
+      },
+      {
+        id: 6,
+        caseNumber: '06',
+        nameEn: 'A-Maze-ing (In progress)',
+        nameJa: 'A-maze-ing（進行中）',
+        descriptionEn:
+          'A-Maze-ing is a Python 3.10+ maze generation, solving, and visualization application built as part of the 42 curriculum. The program reads a configuration file, generates a valid 2D maze (either a perfect maze with a unique path between any two cells or a braided playable board suitable for Pac-Man-style games), calculates the optimal shortest path from entry to exit using Breadth-First Search (BFS), serializes the maze to a file using a 4-bit hexadecimal wall bitmask format, and presents an interactive terminal-based ASCII interface.',
+        descriptionJa:
+          '42 Tokyoのカリキュラムとして開発した、Python製の迷路生成・探索・可視化アプリです。設定ファイルを読み込んで2D迷路を生成し、幅優先探索（BFS）を使ってスタートからゴールまでの最短ルートを計算します。迷路データは16進数で保存でき、ターミナル上で分かりやすく迷路を表示します。',
+        skills: ['Python', 'Pytest', 'Poetry'],
+        img: '/images/projects/a_maze_ing.webp',
+        github: 'https://github.com/peladno/a-maze-ing',
       },
     ] as ProjectData[],
   },
