@@ -1,0 +1,366 @@
+---
+import { translations } from '../i18n/translations';
+const { contact } = translations;
+const contactFormUrl = import.meta.env.PUBLIC_CONTACT_FORM_URL;
+---
+
+<div class='max-w-xl mx-auto w-full pt-8 text-left'>
+  <form
+    id='contact-form'
+    action={contactFormUrl}
+    method='POST'
+    class='space-y-6 bg-white/40 dark:bg-[#1c1a1a]/40 p-8 sm:p-10 border border-[#8c8484]/15 dark:border-white/10 rounded-sm backdrop-blur-xs transition-colors'
+    novalidate
+  >
+    <!-- Honeypot anti-spam (invisible to humans) -->
+    <div class='hidden' aria-hidden='true'>
+      <label for='_gotcha_field'>Do not fill this out if you are human:</label>
+      <input
+        type='text'
+        name='_gotcha'
+        id='_gotcha_field'
+        tabindex='-1'
+        autocomplete='off'
+      />
+    </div>
+
+    <!-- Name Field -->
+    <div>
+      <label
+        for='contact-name'
+        class='block text-[10px] uppercase tracking-[0.2em] font-bold text-[#5a5252] dark:text-[#a89f9f] mb-2'
+      >
+        <span class='lang-en'>{contact.form.nameLabel.en}</span>
+        <span class='lang-ja'>{contact.form.nameLabel.ja}</span>
+        <span class='text-[#bf3a2b] dark:text-[#e05343] ml-0.5'>*</span>
+      </label>
+      <input
+        type='text'
+        id='contact-name'
+        name='name'
+        required
+        minlength='2'
+        maxlength='80'
+        autocomplete='name'
+        placeholder={contact.form.namePlaceholder.en}
+        data-placeholder-en={contact.form.namePlaceholder.en}
+        data-placeholder-ja={contact.form.namePlaceholder.ja}
+        class='w-full px-4 py-3 text-sm bg-transparent border border-[#8c8484]/30 dark:border-white/15 rounded-xs text-[#2d2a2a] dark:text-[#f3eded] placeholder-[#8c8484]/50 dark:placeholder-[#8c8484]/60 focus:outline-none focus:border-[#bf3a2b] dark:focus:border-[#e05343] transition-colors duration-300'
+      />
+      <p
+        class='name-error hidden mt-1 text-[11px] text-[#bf3a2b] dark:text-[#e05343]'
+      >
+      </p>
+    </div>
+
+    <!-- Email Field -->
+    <div>
+      <label
+        for='contact-email'
+        class='block text-[10px] uppercase tracking-[0.2em] font-bold text-[#5a5252] dark:text-[#a89f9f] mb-2'
+      >
+        <span class='lang-en'>{contact.form.emailLabel.en}</span>
+        <span class='lang-ja'>{contact.form.emailLabel.ja}</span>
+        <span class='text-[#bf3a2b] dark:text-[#e05343] ml-0.5'>*</span>
+      </label>
+      <input
+        type='email'
+        id='contact-email'
+        name='email'
+        required
+        maxlength='120'
+        autocomplete='email'
+        placeholder={contact.form.emailPlaceholder.en}
+        data-placeholder-en={contact.form.emailPlaceholder.en}
+        data-placeholder-ja={contact.form.emailPlaceholder.ja}
+        class='w-full px-4 py-3 text-sm bg-transparent border border-[#8c8484]/30 dark:border-white/15 rounded-xs text-[#2d2a2a] dark:text-[#f3eded] placeholder-[#8c8484]/50 dark:placeholder-[#8c8484]/60 focus:outline-none focus:border-[#bf3a2b] dark:focus:border-[#e05343] transition-colors duration-300'
+      />
+      <p
+        class='email-error hidden mt-1 text-[11px] text-[#bf3a2b] dark:text-[#e05343]'
+      >
+      </p>
+    </div>
+
+    <!-- Message Field -->
+    <div>
+      <label
+        for='contact-message'
+        class='block text-[10px] uppercase tracking-[0.2em] font-bold text-[#5a5252] dark:text-[#a89f9f] mb-2'
+      >
+        <span class='lang-en'>{contact.form.messageLabel.en}</span>
+        <span class='lang-ja'>{contact.form.messageLabel.ja}</span>
+        <span class='text-[#bf3a2b] dark:text-[#e05343] ml-0.5'>*</span>
+      </label>
+      <textarea
+        id='contact-message'
+        name='message'
+        required
+        rows='5'
+        minlength='10'
+        maxlength='2000'
+        placeholder={contact.form.messagePlaceholder.en}
+        data-placeholder-en={contact.form.messagePlaceholder.en}
+        data-placeholder-ja={contact.form.messagePlaceholder.ja}
+        class='w-full px-4 py-3 text-sm bg-transparent border border-[#8c8484]/30 dark:border-white/15 rounded-xs text-[#2d2a2a] dark:text-[#f3eded] placeholder-[#8c8484]/50 dark:placeholder-[#8c8484]/60 focus:outline-none focus:border-[#bf3a2b] dark:focus:border-[#e05343] transition-colors duration-300 resize-y'
+      ></textarea>
+      <div class='flex justify-between items-center mt-1'>
+        <p
+          class='message-error hidden text-[11px] text-[#bf3a2b] dark:text-[#e05343]'
+        >
+        </p>
+        <span id='char-count' class='text-[10px] text-[#8c8484] ml-auto'
+          >0 / 2000</span
+        >
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <div class='pt-2'>
+      <button
+        type='submit'
+        id='submit-btn'
+        class='w-full cursor-pointer py-3.5 px-6 border border-[#bf3a2b] dark:border-[#e05343] bg-[#bf3a2b]/5 dark:bg-[#e05343]/10 hover:bg-[#bf3a2b] dark:hover:bg-[#e05343] text-[#bf3a2b] dark:text-[#e05343] hover:text-white dark:hover:text-white text-xs uppercase tracking-[0.25em] font-bold transition-all duration-300 flex items-center justify-center gap-2 group'
+      >
+        <span class='btn-text'>
+          <span class='lang-en'>{contact.form.submit.en}</span>
+          <span class='lang-ja'>{contact.form.submit.ja}</span>
+        </span>
+        <span
+          class='material-symbols-outlined text-sm transition-transform group-hover:translate-x-1'
+        >
+          send
+        </span>
+      </button>
+    </div>
+
+    <!-- Feedback Status Banner -->
+    <div
+      id='form-status'
+      class='hidden p-4 text-xs font-medium text-center rounded-xs transition-all'
+      role='alert'
+    >
+    </div>
+  </form>
+</div>
+
+<script>
+  const form = document.getElementById(
+    'contact-form',
+  ) as HTMLFormElement | null;
+  const nameInput = document.getElementById(
+    'contact-name',
+  ) as HTMLInputElement | null;
+  const emailInput = document.getElementById(
+    'contact-email',
+  ) as HTMLInputElement | null;
+  const messageInput = document.getElementById(
+    'contact-message',
+  ) as HTMLTextAreaElement | null;
+  const charCount = document.getElementById('char-count');
+  const submitBtn = document.getElementById(
+    'submit-btn',
+  ) as HTMLButtonElement | null;
+  const formStatus = document.getElementById('form-status');
+
+  const nameError = form?.querySelector('.name-error');
+  const emailError = form?.querySelector('.email-error');
+  const messageError = form?.querySelector('.message-error');
+
+  // Dynamic placeholder update on language change
+  function updatePlaceholders() {
+    const isJa = document.documentElement.lang === 'ja';
+    [nameInput, emailInput, messageInput].forEach((el) => {
+      if (!el) return;
+      const ph = isJa ? el.dataset.placeholderJa : el.dataset.placeholderEn;
+      if (ph) el.placeholder = ph;
+    });
+  }
+
+  // Observe language attribute changes on <html>
+  const observer = new MutationObserver(() => updatePlaceholders());
+  observer.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ['lang'],
+  });
+  updatePlaceholders();
+
+  // Character counter for textarea
+  messageInput?.addEventListener('input', () => {
+    const len = messageInput.value.length;
+    if (charCount) charCount.textContent = `${len} / 2000`;
+  });
+
+  function sanitize(str: string): string {
+    return str.trim();
+  }
+
+  function validateEmail(email: string): boolean {
+    return /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email);
+  }
+
+  function showStatus(message: string, isSuccess: boolean) {
+    if (!formStatus) return;
+    formStatus.textContent = message;
+    formStatus.classList.remove(
+      'hidden',
+      'bg-red-500/10',
+      'text-[#bf3a2b]',
+      'dark:text-[#e05343]',
+      'border-[#bf3a2b]/30',
+      'dark:border-[#e05343]/30',
+      'bg-green-500/10',
+      'text-green-700',
+      'dark:text-green-400',
+      'border-green-500/30',
+    );
+
+    if (isSuccess) {
+      formStatus.classList.add(
+        'bg-green-500/10',
+        'text-green-700',
+        'dark:text-green-400',
+        'border',
+        'border-green-500/30',
+      );
+    } else {
+      formStatus.classList.add(
+        'bg-red-500/10',
+        'text-[#bf3a2b]',
+        'dark:text-[#e05343]',
+        'border',
+        'border-[#bf3a2b]/30',
+        'dark:border-[#e05343]/30',
+      );
+    }
+  }
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const isJa = document.documentElement.lang === 'ja';
+
+    // Clear previous field errors
+    [nameError, emailError, messageError].forEach((el) => {
+      if (el) {
+        el.textContent = '';
+        el.classList.add('hidden');
+      }
+    });
+
+    // Honeypot check (Silent discard if bot filled hidden input)
+    const gotcha = (
+      form.querySelector('input[name="_gotcha"]') as HTMLInputElement
+    )?.value;
+    if (gotcha) {
+      showStatus(
+        isJa
+          ? 'メッセージを送信しました。'
+          : 'Thank you! Your message has been sent successfully.',
+        true,
+      );
+      form.reset();
+      return;
+    }
+
+    // Rate Limiting (prevent spamming submissions within 30s)
+    const lastSent = localStorage.getItem('last_contact_sent');
+    const now = Date.now();
+    if (lastSent && now - parseInt(lastSent, 10) < 30000) {
+      showStatus(
+        isJa
+          ? '短時間に連続して送信することはできません。少し待ってからお試しください。'
+          : 'Please wait a moment before sending another message.',
+        false,
+      );
+      return;
+    }
+
+    // Validation
+    let valid = true;
+    const name = sanitize(nameInput?.value || '');
+    const email = sanitize(emailInput?.value || '');
+    const message = sanitize(messageInput?.value || '');
+
+    if (!name || name.length < 2) {
+      valid = false;
+      if (nameError) {
+        nameError.textContent = isJa
+          ? 'お名前を2文字以上でご入力ください。'
+          : 'Please enter a name with at least 2 characters.';
+        nameError.classList.remove('hidden');
+      }
+    }
+
+    if (!validateEmail(email)) {
+      valid = false;
+      if (emailError) {
+        emailError.textContent = isJa
+          ? '有効なメールアドレスをご入力ください。'
+          : 'Please enter a valid email address.';
+        emailError.classList.remove('hidden');
+      }
+    }
+
+    if (!message || message.length < 10) {
+      valid = false;
+      if (messageError) {
+        messageError.textContent = isJa
+          ? 'メッセージを10文字以上でご入力ください。'
+          : 'Please enter a message with at least 10 characters.';
+        messageError.classList.remove('hidden');
+      }
+    }
+
+    if (!valid) return;
+
+    // Send payload safely
+    const originalBtnText = submitBtn?.innerHTML || '';
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.classList.add('opacity-60', 'cursor-not-allowed');
+      submitBtn.innerHTML = `<span>${isJa ? '送信中...' : 'Sending...'}</span>`;
+    }
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          message,
+        }),
+      });
+
+      if (response.ok) {
+        localStorage.setItem('last_contact_sent', String(Date.now()));
+        showStatus(
+          isJa
+            ? 'メッセージを送信しました。折り返しご連絡いたします。'
+            : 'Thank you! Your message has been sent successfully.',
+          true,
+        );
+        form.reset();
+        if (charCount) charCount.textContent = '0 / 2000';
+      } else {
+        throw new Error('Server response was not ok');
+      }
+    } catch {
+      showStatus(
+        isJa
+          ? '送信に失敗しました。再度お試しいただくか、直接メールでお問い合わせください。'
+          : 'Failed to send message. Please try again or email directly.',
+        false,
+      );
+    } finally {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('opacity-60', 'cursor-not-allowed');
+        submitBtn.innerHTML = originalBtnText;
+      }
+    }
+  });
+</script>

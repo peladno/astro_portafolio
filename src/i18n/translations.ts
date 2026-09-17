@@ -353,6 +353,7 @@ export const translations = {
     ] as ExperienceItemData[],
   },
   contact: {
+    sectionNum: '05',
     hanko: 'ハビエル',
     title: {
       en: "Let's build something beautiful together",
@@ -361,6 +362,31 @@ export const translations = {
     description: {
       en: 'Available for web and mobile engineering opportunities, freelance collaborations, and challenging software projects.',
       ja: 'Web・モバイル開発の案件、フリーランスのご相談、新しい技術的挑戦の機会をお待ちしております。',
+    },
+    form: {
+      nameLabel: { en: 'Name', ja: 'お名前' },
+      namePlaceholder: { en: 'Your Name', ja: '山田 太郎' },
+      emailLabel: { en: 'Email', ja: 'メールアドレス' },
+      emailPlaceholder: { en: 'your.email@domain.com', ja: 'name@example.com' },
+      messageLabel: { en: 'Message', ja: 'メッセージ' },
+      messagePlaceholder: {
+        en: 'Tell me about your project, ideas, or opportunities...',
+        ja: 'プロジェクトのご相談、要件、メッセージなどをご記入ください...',
+      },
+      submit: { en: 'Send Message', ja: '送信する' },
+      sending: { en: 'Sending...', ja: '送信中...' },
+      success: {
+        en: 'Thank you! Your message has been sent successfully.',
+        ja: 'メッセージを送信しました。折り返しご連絡いたします。',
+      },
+      error: {
+        en: 'Failed to send message. Please try again or email directly.',
+        ja: '送信に失敗しました。再度お試しいただくか、直接メールでお問い合わせください。',
+      },
+      rateLimit: {
+        en: 'Please wait a moment before sending another message.',
+        ja: '短時間に連続して送信することはできません。少し待ってからお試しください。',
+      },
     },
     github: 'GitHub',
     linkedin: 'LinkedIn',

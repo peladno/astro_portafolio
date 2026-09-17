@@ -1,5 +1,6 @@
 ---
 import { translations } from '../i18n/translations';
+import ContactForm from './ContactForm.astro';
 const { contact } = translations;
 ---
 
@@ -23,7 +24,7 @@ const { contact } = translations;
       <span class='lang-en'>{contact.description.en}</span>
       <span class='lang-ja'>{contact.description.ja}</span>
     </p>
-    <div class='space-y-12'>
+    <div class='space-y-12 w-full'>
       <a
         class='group inline-flex flex-col items-center no-underline'
         href='mailto:j.perezurrutia@gmail.com'
@@ -41,6 +42,10 @@ const { contact } = translations;
         >
         </div>
       </a>
+
+      <!-- Modular Contact Form -->
+      <ContactForm />
+
       <div class='flex items-center justify-center space-x-12 pt-8'>
         <a
           class='text-[#5a5252] dark:text-[#a89f9f] hover:text-[#bf3a2b] dark:hover:text-[#e05343] transition-colors flex flex-col items-center gap-2 group w-24'
