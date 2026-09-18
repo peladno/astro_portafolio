@@ -273,7 +273,7 @@ export const translations = {
         descriptionJa:
           '42 Tokyoのカリキュラムとして開発した、Python製の迷路生成・探索・可視化アプリです。設定ファイルを読み込んで2D迷路を生成し、幅優先探索（BFS）を使ってスタートからゴールまでの最短ルートを計算します。迷路データは16進数で保存でき、ターミナル上で分かりやすく迷路を表示します。',
         skills: ['Python', 'Pytest', 'Poetry'],
-        img: '/images/projects/a_maze_ing.webp',
+        img: '/images/projects/a-maze-ing.png',
         github: 'https://github.com/peladno/a-maze-ing',
       },
     ] as ProjectData[],
