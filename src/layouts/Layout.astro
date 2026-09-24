@@ -9,7 +9,7 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang='en'>
+<html lang='ja'>
   <head>
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width' />
@@ -47,10 +47,8 @@ const { title } = Astro.props;
         const savedLang = localStorage.getItem('portfolio_lang');
         if (savedLang === 'ja' || savedLang === 'en') {
           document.documentElement.lang = savedLang;
-        } else if (navigator.language && navigator.language.startsWith('ja')) {
-          document.documentElement.lang = 'ja';
         } else {
-          document.documentElement.lang = 'en';
+          document.documentElement.lang = 'ja';
         }
 
         const savedTheme = localStorage.getItem('portfolio_theme');
