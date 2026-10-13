@@ -57,7 +57,7 @@ export const translations = {
     },
     quote: {
       en: '"From culinary precision to software craftsmanship — building clean, resilient, and user-centric digital experiences."',
-      ja: '「製菓の精密さからソフトウェアのクラフトマンシップへ — クリーンでレジリエントな、ユーザー中心のデジタル体験を創る」',
+      ja: '「製菓の緻密さをソフトウェアのクラフトマンシップへ。堅牢でユーザーに寄り添うデジタル体験を追求する」',
     },
     available: {
       en: 'Available',
@@ -87,13 +87,13 @@ export const translations = {
       },
       ja: {
         before:
-          'パティシエ（製菓職人）から強い情熱を持ってソフトウェアエンジニアへ転身。現在は ',
+          'パティシエ（製菓職人）からソフトウェアエンジニアへ転身。現在は ',
         school: '42 Tokyo',
-        mid: ' に在籍し、低レイヤの基盤である ',
+        mid: ' に在籍し、低レイヤの基礎となる ',
         cLang: 'C言語',
         and: ' や ',
         pythonLang: 'Python',
-        after: ' を深めながら、',
+        after: ' の実践を重ねながら、',
         react: 'React',
         reactNative: 'React Native',
         backend: '、およびモダンなバックエンド開発に取り組んでいます。',
@@ -104,7 +104,7 @@ export const translations = {
         title: { en: '42 Tokyo & Systems', ja: '42 Tokyo & システム開発' },
         desc: {
           en: 'At 42 Tokyo, I build a rigorous systems foundation through peer-to-peer, project-based engineering. Diving deep into memory management, algorithms in C, and scripting in Python.',
-          ja: '42 Tokyoにて、P2Pの実践を通じて堅牢なシステム基盤を構築。メモリ管理、C言語によるアルゴリズム実装、Pythonによる自動化スクリプトを深く探求しています。',
+          ja: '42 Tokyoにて、ピアラーニングを通じてコンピュータサイエンスの基礎を徹底的に習得。メモリ管理やC言語でのアルゴリズム実装、Pythonによるスクリプト自動化に取り組んでいます。',
         },
       },
       craft: {
@@ -114,7 +114,7 @@ export const translations = {
         },
         desc: {
           en: 'My past in the culinary world instilled a relentless focus on precision, discipline, and attention to detail. I bring that same dedication to designing clean, maintainable codebases and intuitive mobile and web solutions.',
-          ja: '製菓の世界で培った精密さ、高い規律、細部へのこだわりをコードに活かし、保守性が高く洗練されたコードベースと直感的なWeb・モバイル体験を構築します。',
+          ja: '製菓の世界で培った緻密さや規律、細部へのこだわりを活かし、保守性の高いコード設計と直感的なWeb・モバイル体験を創り出します。',
         },
       },
       global: {
@@ -124,7 +124,7 @@ export const translations = {
         },
         desc: {
           en: 'Living and programming in Tokyo. Bilingual in Spanish and English (IELTS 5.5), and actively advancing in Japanese (日本語) to collaborate in diverse, multicultural engineering teams.',
-          ja: '東京在住。スペイン語・英語（IELTS 5.5）のバイリンガルで、日本の開発チームで円滑に協働するため日本語（日本語能力試験学習中）の実践も日々行っています。',
+          ja: '東京在住。スペイン語・英語（IELTS 5.5）のバイリンガル。日本の開発チームで円滑に協働できるよう、日本語（JLPT受験に向けて学習中）のコミュニケーション力も日々磨いています。',
         },
       },
     },
@@ -193,7 +193,7 @@ export const translations = {
         descriptionEn:
           'Cross-platform mobile application managing local inventory data with SQLite and Firebase authentication, built with Expo and Redux.',
         descriptionJa:
-          'SQLiteによるローカルデータとFirebase認証を備えたクロスプラットフォーム在庫管理アプリ（React Native / Expo / Redux）。',
+          'SQLiteによるローカル永続化とFirebase認証を組み込んだ、クロスプラットフォーム在庫管理アプリ（React Native / Expo / Redux）。',
         skills: ['React Native', 'Redux', 'Expo', 'SQLite', 'Firebase'],
         img: '/images/projects/inventoryapp.png',
         github: 'https://github.com/peladno/inventory-reactNativeApp',
@@ -206,7 +206,7 @@ export const translations = {
         descriptionEn:
           'Full-stack e-commerce web application with product catalog, cart workflows, and REST API backend built with Express and MongoDB.',
         descriptionJa:
-          '商品カタログ、カート機能、ExpressとMongoDBによるREST APIバックエンドを備えたフルスタックECプラットフォーム。',
+          '商品カタログからカート機能、ExpressとMongoDBによるREST APIバックエンドまで一貫して構築したフルスタックECプラットフォーム。',
         skills: ['React', 'Node.js', 'MongoDB', 'Material UI', 'Express'],
         img: '/images/projects/Eshop.png',
         web: 'https://eshop-project-29f5e.web.app/',
@@ -241,11 +241,11 @@ export const translations = {
       },
       {
         id: 4,
-        caseNumber: '06',
+        caseNumber: '04',
         nameEn: '42 python modules',
-        nameJa: '42 pythonモジュール',
+        nameJa: '42 Pythonモジュール',
         descriptionEn: 'Python projects for 42 Tokyo school',
-        descriptionJa: '42東京学校のPythonプロジェクト',
+        descriptionJa: '42 Tokyoのカリキュラム課題として開発したPythonプロジェクト。',
         skills: ['Python'],
         img: '/images/projects/python_modules.webp',
         github: 'https://github.com/dlab-team/c6-frontend',
@@ -258,7 +258,7 @@ export const translations = {
         descriptionEn:
           'A robust backend API for a shared calendar application, built with Node.js, Express, and TypeScript. This project uses Hexagonal Architecture to ensure modularity, testability, and maintainability.',
         descriptionJa:
-          'Node.js、Express、TypeScript を使用して構築された共有カレンダーアプリケーション向けの堅牢なバックエンド API です。このプロジェクトでは、モジュール性、テスト容易性、保守性を確保するためにヘキサゴナルアーキテクチャを採用しています',
+          '共有カレンダーアプリ向けに開発した堅牢なバックエンドREST API。Node.js、Express、TypeScriptを採用し、高い保守性とテスト容易性を担保するためヘキサゴナルアーキテクチャに基づいて設計しています。',
         skills: ['Node js', 'Typescript', 'PostgreSQL'],
         img: '/images/projects/calendar_api.webp',
         github: 'https://github.com/dlab-team/c6-frontend',
@@ -271,7 +271,7 @@ export const translations = {
         descriptionEn:
           'A-Maze-ing is a Python 3.10+ maze generation, solving, and visualization application built as part of the 42 curriculum. The program reads a configuration file, generates a valid 2D maze (either a perfect maze with a unique path between any two cells or a braided playable board suitable for Pac-Man-style games), calculates the optimal shortest path from entry to exit using Breadth-First Search (BFS), serializes the maze to a file using a 4-bit hexadecimal wall bitmask format, and presents an interactive terminal-based ASCII interface.',
         descriptionJa:
-          '42 Tokyoのカリキュラムとして開発した、Python製の迷路生成・探索・可視化アプリです。設定ファイルを読み込んで2D迷路を生成し、幅優先探索（BFS）を使ってスタートからゴールまでの最短ルートを計算します。迷路データは16進数で保存でき、ターミナル上で分かりやすく迷路を表示します。',
+          '42 Tokyoのカリキュラム課題として開発した、Python製の迷路生成・探索・可視化アプリ。設定ファイルを読み込んで2D迷路を生成し、幅優先探索（BFS）でスタートからゴールまでの最短ルートを算出。迷路データは16進数の壁ビットマスク形式で保存し、ターミナル上に直感的なASCIIアートで迷路を描画します。',
         skills: ['Python', 'Pytest', 'Poetry'],
         img: '/images/projects/a-maze-ing.png',
         github: 'https://github.com/peladno/a-maze-ing',
@@ -283,7 +283,7 @@ export const translations = {
     sectionTitle: { en: 'Professional Path', ja: '経歴・歩み' },
     subtitle: {
       en: 'Precision, continuous learning, and software craftsmanship.',
-      ja: '精密さ、継続的な学習、そしてソフトウェアのクラフトマンシップ。',
+      ja: '緻密なモノづくり、継続的な学び、ソフトウェアのクラフトマンシップ。',
     },
     items: [
       {
@@ -299,7 +299,7 @@ export const translations = {
         ],
         bulletsJa: [
           'C言語による低レイヤプログラミング：メモリ管理、ポインタ操作、データ構造、UNIXシステム設計。',
-          'P2Pのプロジェクト課題を通じたPythonによるスクリプト開発と自動化。',
+          'ピアラーニング（P2P）形式のプロジェクト課題を通じたPythonによるスクリプト開発と自動化。',
         ],
       },
       {
@@ -346,8 +346,8 @@ export const translations = {
           'Transferred high-discipline, structured problem-solving from professional pastry chef background into software development.',
         ],
         bulletsJa: [
-          'CoderhouseにてWeb開発、JavaScript、React JS認定取得。',
-          '製菓シェフとしての高い規律と構造化された問題解決力をソフトウェア開発へ統合。',
+          'CoderhouseにてWeb開発、JavaScript、React認定を取得。',
+          '製菓シェフ時代に培った高い自己規律と構造的な問題解決力を、ソフトウェア開発に応用・実践。',
         ],
       },
     ] as ExperienceItemData[],
@@ -357,7 +357,7 @@ export const translations = {
     hanko: 'ハビエル',
     title: {
       en: "Let's build something beautiful together",
-      ja: '共に素晴らしいものを創りましょう',
+      ja: '魅力的なプロダクトを、一緒に作り上げましょう',
     },
     description: {
       en: 'Available for web and mobile engineering opportunities, freelance collaborations, and challenging software projects.',
